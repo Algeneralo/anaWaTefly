@@ -1,0 +1,57 @@
+.banner {
+    transform: scaleX(-1);
+}
+
+.banner .container {
+    transform: scaleX(-1);
+}
+
+.banner-link a {
+    padding-right: unset;
+    padding-left: 16px;
+}
+
+.banner-link a.active, .banner-link a:hover {
+    color: #ff7d01;
+}
+
+.banner-link a:last-child {
+    padding-left: 0;
+}
+
+.banner-link a:not(:last-of-type):before {
+    right: auto;
+    left: 3px;
+    -webkit-transform: rotate(180deg) translateY(50%);
+    -ms-transform: rotate(180deg) translateY(50%);
+    transform: rotate(180deg) translateY(50%);
+}
+
+.goals .goals-message {
+
+    -webkit-box-shadow: -3px 0 20px 4px rgba(0, 0, 0, 0.08);
+    box-shadow: -3px 0 20px 4px rgba(0, 0, 0, 0.08);
+    border-right: 1px solid #eaeaea;
+}
+
+.goals .vision {
+    -webkit-box-shadow: unset;
+    box-shadow: unset;
+    border-right: unset;
+}
+
+.goals h3 {
+    padding: 0 0 0 58px;
+}
+
+.goals svg {
+    float: left;
+}
+
+.head-message h3, .head-message p {
+    padding-left: 15px;
+}
+
+.head-message .head-name {
+    padding-right: 20px;
+}
