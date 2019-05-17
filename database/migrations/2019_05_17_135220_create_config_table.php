@@ -25,6 +25,7 @@ class CreateConfigTable extends Migration
             $table->text('welcome_message_ar');
             $table->text('welcome_message_en');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
