@@ -18,7 +18,6 @@ class CreatePartnersTable extends Migration
             $table->string('name_ar');
             $table->string('name_en');
             $table->string('image');
-            $table->enum('type', [1, 2])->comment('1 partner,2 director');
             $table->timestamps();
             $table->softDeletes();
         });
