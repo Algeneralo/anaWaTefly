@@ -18,7 +18,7 @@ class CreatePostsTable extends Migration
             $table->string('title');
             $table->longText('body');
             $table->string('image');
-            $table->enum('type', [1, 2, 3])->comment('The type of the post:1 news,2 projects,or 3 programs');
+            $table->enum('type', [1, 2, 3])->comment('The type of the post:1 news,2 projects is done,3 programs,or 4 project for finance');
             $table->enum('lang', ['ar', 'en'])->comment('Language,ar arabic,en english');
             $table->timestamps();
             $table->softDeletes();
