@@ -3,10 +3,11 @@
 namespace App;
 
 use App\Scopes\LangScope;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class FinancePrograms extends Model
+class FinanceProjects extends Model
 {
     use SoftDeletes;
     protected $table = "posts";
