@@ -19,7 +19,7 @@ class CreateAboutTable extends Migration
             $table->text('message');
             $table->text('vision');
             $table->json('head_message');
-            $table->enum('lang', [1, 2])->comment('Language,1 arabic,2 english');
+            $table->enum('lang', ['ar', 'en'])->comment('Language,ar arabic,en english');
             $table->timestamps();
             $table->softDeletes();
         });
