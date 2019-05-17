@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('website.layout')
 @section('body')
     <section class="banner" id="contact-us-banner"
              style="background: url({{'/assets/img/contact-banner.png'}}) no-repeat scroll center center;">

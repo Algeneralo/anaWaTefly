@@ -13,34 +13,41 @@
 
 Route::get('/', function () {
 
-    return view('home');
+    return view('website.home');
 });
 
 Route::get('/about', function () {
 
-    return view('about');
+    return view('website.about');
 });
 Route::get('/projects', function () {
 
-    return view('projects');
+    return view('website.projects');
 });
 Route::get('/programs', function () {
 
-    return view('programs');
+    return view('website.programs');
 });
 Route::get('/partners', function () {
 
-    return view('partners');
+    return view('website.partners');
 });
 Route::get('/volunteer', function () {
 
-    return view('volunteer');
+    return view('website.volunteer');
 });
 Route::get('/contact-us', function () {
 
-    return view('contact-us');
+    return view('website.contact-us');
 });
 Route::get('/details/{table}/{id}', function () {
-
     return view('details');
 })->where(['table' => 'projects|programs|news', 'id' => '[0-9]+']);
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
+    Route::get('/', function () {
+        return view('website.partners');
+    });
+});
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

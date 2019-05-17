@@ -1,5 +1,6 @@
-@extends('layout')
+@extends('website.layout')
 @section('body')
+
     <section class="banner" style="background: url({{'/assets/img/about-banner.png'}}) no-repeat scroll center center;">
         <div class="container">
             <div class="banner-content">
