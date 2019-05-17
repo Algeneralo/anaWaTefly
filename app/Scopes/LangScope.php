@@ -17,6 +17,6 @@ class LangScope implements Scope
      */
     public function apply(Builder $builder, Model $model)
     {
-        $builder->where('lang', App::getLocale());
+        $builder->where('lang', \App::getLocale());
     }
 }
