@@ -11,43 +11,28 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/', 'WebsiteController@index');
+Route::get('/about', 'WebsiteController@about');
+Route::get('/projects', 'WebsiteController@projects');
+Route::get('/programs', 'WebsiteController@programs');
+Route::get('/partners', 'WebsiteController@partners');
+Route::match(['get', 'post'], '/volunteer', 'WebsiteController@volunteer');
+Route::match(['get', 'post'], '/contact-us', 'WebsiteController@contactUs');
 
-    return view('website.home');
-});
+Route::get('/details/{table}/{id}', 'WebsiteController@details');
+//Route::get('/details/{table}/{id}',
+//    function () {
+//        return view('details');
+//    })->where(['table' => 'doneProjects|financeProjects|programs|news', 'id' => '[0-9]+']);
 
-Route::get('/about', function () {
 
-    return view('website.about');
-});
-Route::get('/projects', function () {
-
-    return view('website.projects');
-});
-Route::get('/programs', function () {
-
-    return view('website.programs');
-});
-Route::get('/partners', function () {
-
-    return view('website.partners');
-});
-Route::get('/volunteer', function () {
-
-    return view('website.volunteer');
-});
-Route::get('/contact-us', function () {
-
-    return view('website.contact-us');
-});
-Route::get('/details/{table}/{id}', function () {
-    return view('details');
-})->where(['table' => 'projects|programs|news', 'id' => '[0-9]+']);
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('/', function () {
         return view('website.partners');
     });
 });
-Auth::routes();
+Auth::routes(['register' => false]);
+
+Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/home', 'HomeController@index')->name('home');
