@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="80ebd6bb-b938-45a5-b7fa-46c1cee47153" name="Default Changelist" comment="edit down schema table name">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/About.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/About.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Directors.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Directors.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/FinancePrograms.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/FinanceProjects.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Scopes/LangScope.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Scopes/LangScope.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Slider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Slider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_05_17_121523_create_posts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_05_17_121523_create_posts_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/website/programs.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/website/programs.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/website/projects.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/website/projects.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-    </list>
+    <list default="true" id="80ebd6bb-b938-45a5-b7fa-46c1cee47153" name="Default Changelist" comment="Create auth controllers" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -454,15 +442,56 @@
       <option name="project" value="LOCAL" />
       <updated>1558102767459</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="fix scope error">
+      <created>1558135233038</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1558135233038</updated>
+    </task>
+    <task id="LOCAL-00004" summary="fix models errors">
+      <created>1558135261325</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1558135261325</updated>
+    </task>
+    <task id="LOCAL-00005" summary="modify type column">
+      <created>1558135316159</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1558135316159</updated>
+    </task>
+    <task id="LOCAL-00006" summary="add links for views">
+      <created>1558135342132</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1558135342132</updated>
+    </task>
+    <task id="LOCAL-00007" summary="modify web route links">
+      <created>1558135369817</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1558135369817</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Create website controllers">
+      <created>1558135400018</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1558135400018</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="145645000" />
+    <option name="totallyTimeSpent" value="145890000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25053647" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -479,7 +508,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3293348" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50160944" side_tool="true" weight="0.32824427" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49839056" weight="0.3031625" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49839056" visible="true" weight="0.3031625" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -492,7 +521,13 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add soft delete for config table" />
     <MESSAGE value="edit down schema table name" />
-    <option name="LAST_COMMIT_MESSAGE" value="edit down schema table name" />
+    <MESSAGE value="fix scope error" />
+    <MESSAGE value="fix models errors" />
+    <MESSAGE value="modify type column" />
+    <MESSAGE value="add links for views" />
+    <MESSAGE value="modify web route links" />
+    <MESSAGE value="Create website controllers" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create website controllers" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php">
