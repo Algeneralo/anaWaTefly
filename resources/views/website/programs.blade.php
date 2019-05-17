@@ -21,17 +21,7 @@
                         <p>
                             asdddddddddddddddddddddSDadsa sadas ads asd asd
                         </p>
-                        <a class="float-right" href="#">المزيد</a>
-                    </div>
-                    <img src="{{asset('assets/img/test.jpg')}}" class="float-right img-thumbnail w-50">
-                </div>
-                <div class="programs-item col-12">
-                    <div class="programs-text float-left">
-                        <h3><span>برنامج</span> تمكين المرأة</h3>
-                        <p>
-                            asdddddddddddddddddddddSDadsa sadas ads asd asd
-                        </p>
-                        <a class="float-right" href="#">المزيد</a>
+                        <a class="float-right" href="/details/programs/1">المزيد</a>
                     </div>
                     <img src="{{asset('assets/img/test.jpg')}}" class="float-right img-thumbnail w-50">
                 </div>
