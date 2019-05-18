@@ -30,8 +30,9 @@
             <div id="navigation"><!-- Navigation Menu-->
                 <ul class="navigation-menu">
                     <li class="has-submenu">
-                        <a href="index.html">
-                            <i class="mdi mdi-view-dashboard"></i>Dashboard
+                        <a href="/admin">
+                            <i class="mdi mdi-view-dashboard"></i>
+                            الاعدادات العامة
                         </a>
                     </li>
                     <li class="has-submenu"><a href="#"><i class="mdi mdi-cube-outline"></i>Components</a>

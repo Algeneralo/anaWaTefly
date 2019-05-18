@@ -17,4 +17,5 @@
     <link href="{{asset('assets/libs/simple-line-icons/css/simple-line-icons.css')}}" rel="stylesheet" type="text/css">
     <!-- App css -->
     <link rel="stylesheet" href="{{asset('assets/css/app.min.css')}}">
+    @yield('style')
 </head>
