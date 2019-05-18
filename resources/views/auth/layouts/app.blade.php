@@ -15,16 +15,40 @@
           rel="stylesheet" type="text/css">
     <!-- App css -->
     <link rel="stylesheet" href="{{asset('assets/css/app.min.css')}}">
+    <style>
+        body {
+            font-family: "ArabicFont", sans-serif;
+        }
+    </style>
 </head>
 <body class="bg-account-pages"><!-- Login -->
 <section>
     <div class="container">
         <div class="row">
             <div class="col-12">
-                @yield('body')
-            </div><!-- end col -->
-        </div>
-        <!-- end row -->
+                <div class="wrapper-page">
+                    <div class="account-pages">
+                        <div class="account-box"><!-- Logo box-->
+                            <div class="account-logo-box">
+                                <h2 class="text-uppercase text-center">
+                                    <a href="#" class="text-success">
+                            <span>
+                                <img src="{{asset('assets/img/logo-name.png')}}" alt="" height="50"
+                                     style="margin-top: 17px;">
+                                <img src="{{asset('assets/img/logo.png')}}" alt="" height="100">
+                            </span>
+                                    </a>
+                                </h2>
+                            </div>
+                            @yield('body')
+                        </div><!-- end account-content -->
+                    </div><!-- end account-box -->
+                </div><!-- end account-page-->
+            </div><!-- end wrapper-page -->
+
+        </div><!-- end col -->
+    </div>
+    <!-- end row -->
     </div><!-- end container -->
 </section><!-- END HOME --><!-- jQuery  -->
 <script src="{{asset('assets/libs/jquery/jquery.min.js')}}"></script>
