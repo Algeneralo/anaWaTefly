@@ -16,7 +16,7 @@ class StoreAboutRequest extends FormRequest
         return true;
     }
 
-    /**
+    /**unique
      * Get the validation rules that apply to the request.
      *
      * @return array
@@ -42,6 +42,13 @@ class StoreAboutRequest extends FormRequest
             "message" => "الرسالة",
             "head_message" => "كلمة رئيس الجمعية",
             "head_name" => "اسم رئيس الجمعية",
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'lang.unique' => "لا يمكن اضافة اكثر من بيانات للغة الواحدة"
         ];
     }
 }
