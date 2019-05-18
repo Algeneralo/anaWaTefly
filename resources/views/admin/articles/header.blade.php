@@ -35,6 +35,12 @@
                             الاعدادات العامة
                         </a>
                     </li>
+                    <li class="has-submenu">
+                        <a href="/admin/about">
+                            <i class="mdi mdi-view-dashboard"></i>
+                            عن الجمعية
+                        </a>
+                    </li>
                     <li class="has-submenu"><a href="#"><i class="mdi mdi-cube-outline"></i>Components</a>
                         <ul class="submenu">
                             <li><a href="calendar.html">Calendar</a></li>
