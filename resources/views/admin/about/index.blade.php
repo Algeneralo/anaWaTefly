@@ -44,10 +44,4 @@
             </tbody>
         </table>
     </div>
-    <div class="card-box">
-        <h4 class="header-title m-t-0 mb-3">بيانات التواصل</h4>
-        <div class="row">
-
-        </div>
-    </div>
 @endsection
