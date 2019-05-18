@@ -24,8 +24,9 @@ Route::get('/details/{table}/{id}', 'WebsiteController@details')
 
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
-    Route::get('/', "AdminController@index");
-    Route::post('/config/{id?}', "AdminController@configStore");
+    Route::get('/', "Admin\ConfigController@index");
+    Route::post('/config/{id?}', "Admin\ConfigController@store");
+    Route::resource('about', 'Admin\AboutController')->except(['show']);
 });
 Auth::routes();
 
