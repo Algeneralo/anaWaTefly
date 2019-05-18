@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\about;
 use App\Directors;
 use App\Http\Requests\StoreAboutRequest;
+use App\Http\Requests\UpdateAboutRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -18,8 +19,7 @@ class AboutController extends Controller
     public function index()
     {
         $abouts = about::all();
-        $directors = Directors::all();
-        return view('admin.about.index', compact('abouts', 'directors'));
+        return view('admin.about.index', compact('abouts'));
     }
 
     /**
@@ -43,6 +43,7 @@ class AboutController extends Controller
         //replace the head message value to json to store the head name with the message
         $request->merge(['head_message' => json_encode(['head_message' => $request->input('head_message'),
             'head_name' => $request->input('head_name')])]);
+
         $status = about::create($request->all());
         if ($status)
             return redirect('admin/about')->with('success', 'تم الانشاء بنجاح');
@@ -57,7 +58,8 @@ class AboutController extends Controller
      */
     public function edit($id)
     {
-        //
+        $about = about::findOrFail($id);
+        return view('admin.about.edit', compact('about'));
     }
 
     /**
@@ -67,9 +69,15 @@ class AboutController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateAboutRequest $request, $id)
     {
-        //
+        //replace the head message value to json to store the head name with the message
+        $request->merge(['head_message' => json_encode(['head_message' => $request->input('head_message'),
+            'head_name' => $request->input('head_name')])]);
+        $status = about::where('id', $id)->update($request->except(['_token', '_method', 'head_name']));
+        if ($status)
+            return redirect('admin/about')->with('success', 'تم تحديث البيانات بنجاح');
+        return redirect()->back()->with('error', 'حدث خلل,يرجى المحاولة فيما بعد');
     }
 
     /**
