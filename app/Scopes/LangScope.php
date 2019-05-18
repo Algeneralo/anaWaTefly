@@ -5,6 +5,7 @@ namespace App\Scopes;
 use Illuminate\Database\Eloquent\Scope;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\Facades\Auth;
 
 class LangScope implements Scope
 {
@@ -17,6 +18,7 @@ class LangScope implements Scope
      */
     public function apply(Builder $builder, Model $model)
     {
-        $builder->where('lang', \App::getLocale());
+        if (Auth::guest())
+            $builder->where('lang', \App::getLocale());
     }
 }
