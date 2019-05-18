@@ -23,4 +23,24 @@ class about extends Model
 
         static::addGlobalScope(new LangScope());
     }
+
+    /**
+     * extract the head message from json
+     *
+     * @return string
+     */
+    public function getHeadMessageAttribute()
+    {
+        return json_decode($this->attributes['head_message'])->head_message;
+    }
+
+    /**
+     * extract the head name from json
+     *
+     * @return string
+     */
+    public function getHeadNameAttribute()
+    {
+        return json_decode($this->attributes['head_message'])->head_name;
+    }
 }
