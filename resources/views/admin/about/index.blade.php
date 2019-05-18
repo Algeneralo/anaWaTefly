@@ -1,4 +1,11 @@
 @extends('admin.layout')
+@section('style')
+    <style>
+        form {
+            display: inline;
+        }
+    </style>
+@endsection
 @section('body')
     <div class="card-box"><h4 class="header-title m-t-0 mb-3">عن الجمعية</h4>
         <a class="btn btn-success mb-2" href="{{route('about.create')}}">اضافة</a>
@@ -26,8 +33,8 @@
                     <td>{{$about->head_name}}</td>
                     <td>@if($about->lang=="ar"){{'العربية'}}@else{{'الانجليزية'}}@endif</td>
                     <td>
-                        <a class="btn btn-warning" href="{{route('about.update',$about->id)}}">تعديل</a>
-                        <form style="display:inline;" class="form-inline" action="{{route('about.destroy',$about->id)}}"
+                        <a class="btn btn-warning" href="{{route('about.edit',$about->id)}}">تعديل</a>
+                        <form class="form-inline" action="{{route('about.destroy',$about->id)}}"
                               method="post">
                             @csrf
                             @method('DELETE')
