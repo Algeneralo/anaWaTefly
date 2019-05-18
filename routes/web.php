@@ -19,20 +19,13 @@ Route::get('/partners', 'WebsiteController@partners');
 Route::match(['get', 'post'], '/volunteer', 'WebsiteController@volunteer');
 Route::match(['get', 'post'], '/contact-us', 'WebsiteController@contactUs');
 
-Route::get('/details/{table}/{id}', 'WebsiteController@details');
-//Route::get('/details/{table}/{id}',
-//    function () {
-//        return view('details');
-//    })->where(['table' => 'doneProjects|financeProjects|programs|news', 'id' => '[0-9]+']);
+Route::get('/details/{table}/{id}', 'WebsiteController@details')
+    ->where(['table' => 'doneProjects|financeProjects|programs|news', 'id' => '[0-9]+']);
 
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
-    Route::get('/', function () {
-        return view('website.partners');
-    });
+    Route::get('/', "AdminController@index");
+    Route::post('/config/{id?}', "AdminController@configStore");
 });
-Auth::routes(['register' => false]);
+Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('/home', 'HomeController@index')->name('home');
