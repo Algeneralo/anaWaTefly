@@ -24,7 +24,7 @@ class UpdateAboutRequest extends FormRequest
     public function rules()
     {
         return [
-            'lang' => "required|unique:about",
+            'lang' => "required",
             'info' => "required",
             'vision' => "required",
             'message' => "required",
