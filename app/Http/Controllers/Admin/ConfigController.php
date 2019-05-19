@@ -31,8 +31,8 @@ class ConfigController extends Controller
         //find the configuration by id or create new one
         $status = config::updateOrCreate(['id' => $id,], $request->all());
         if ($status)
-            return redirect()->back()->with('success', 'تم التعديل بنجاح');
-        return redirect()->back()->with('error', 'حدث خلل,يرجى المحاولة فيما بعد');
+            return $this->successResponse('admin/', 'تم التعديل بنجاح');
+        return $this->failResponse();
     }
 
 }

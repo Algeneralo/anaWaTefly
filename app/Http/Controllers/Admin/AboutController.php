@@ -44,8 +44,8 @@ class AboutController extends Controller
 
         $status = about::create($request->all());
         if ($status)
-            return redirect('admin/about')->with('success', 'تم الانشاء بنجاح');
-        return redirect()->back()->with('error', 'حدث خلل,يرجى المحاولة فيما بعد');
+            return $this->successResponse('admin/about');
+        return $this->failResponse();
     }
 
     /**
@@ -65,29 +65,29 @@ class AboutController extends Controller
      *
      * @param  \Illuminate\Http\Request $request
      * @param  int $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(UpdateAboutRequest $request, $id)
     {
         $this->mergeRequestWithHeadMessage($request);
         $status = about::where('id', $id)->update($request->except(['_token', '_method', 'head_name']));
         if ($status)
-            return redirect('admin/about')->with('success', 'تم تحديث البيانات بنجاح');
-        return redirect()->back()->with('error', 'حدث خلل,يرجى المحاولة فيما بعد');
+            return $this->successResponse('admin/about','تم التعديل بنجاح');
+        return $this->failResponse();
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param  int $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy($id)
     {
         $status = about::findOrFail($id)->forceDelete();
         if ($status)
-            return redirect()->back()->with('success', 'تم الحذف بنجاح');
-        return redirect()->back()->with('error', 'حدث خلل,يرجى المحاولة فيما بعد');
+            return $this->successResponse('admin/about','تم الحذف بنجاح');
+        return $this->failResponse();
     }
 
     /**
