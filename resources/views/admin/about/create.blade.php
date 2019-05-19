@@ -15,36 +15,32 @@
                 <div class="form-group col-6">
                     <label class="mr-3" for="exampleInputEmail1">الرسالة التعريفية(عن الجمعية)</label>
                     <div class="col-md-12">
-                            <textarea type="text" class="form-control" name="info"
-                                      aria-describedby="emailHelp"></textarea>
+                        <textarea type="text" class="form-control" name="info">{{old('info')}}</textarea>
                     </div>
                 </div>
                 <div class="form-group col-6">
                     <label class="mr-3" for="exampleInputEmail1">الرؤية</label>
                     <div class="col-md-12">
-                            <textarea type="text" class="form-control" name="vision"
-                                      aria-describedby="emailHelp"></textarea>
+                        <textarea type="text" class="form-control" name="vision">{{old('vision')}}</textarea>
                     </div>
                 </div>
                 <div class="form-group col-6">
                     <label class="mr-3" for="exampleInputEmail1">الرسالة</label>
                     <div class="col-md-12">
-                            <textarea type="text" class="form-control" name="message"
-                                      aria-describedby="emailHelp"></textarea>
+                        <textarea type="text" class="form-control" name="message">{{old('message')}}</textarea>
                     </div>
                 </div>
                 <div class="form-group col-6">
                     <label class="mr-3" for="exampleInputEmail1">كلمة رئيس الجمعية</label>
                     <div class="col-md-12">
-                            <textarea type="text" class="form-control" name="head_message"
-                                      aria-describedby="emailHelp"></textarea>
+                        <textarea type="text" class="form-control"
+                                  name="head_message">{{old('head_message')}}</textarea>
                     </div>
                 </div>
                 <div class="form-group col-6">
                     <label class="mr-3" for="exampleInputEmail1">اسم رئيس الجمعية</label>
                     <div class="col-md-12">
-                        <input type="text" class="form-control" name="head_name"
-                               aria-describedby="emailHelp">
+                        <input type="text" class="form-control" name="head_name" value="{{old('head_name')}}">
                     </div>
                 </div>
                 <div class="form-group col-6">
