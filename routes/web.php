@@ -27,6 +27,14 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('/', "Admin\ConfigController@index");
     Route::post('/config/{id?}', "Admin\ConfigController@store");
     Route::resource('about', 'Admin\AboutController')->except(['show']);
+    Route::resource('directors', 'Admin\DirectorController')->except(['show']);
 });
 Auth::routes();
 
+
+
+//Route::get('/image', function () {
+//    $img = Image::make('assets/img/test.jpg')->resize(210, 210);
+//
+//    return $img->response('jpg');
+//});

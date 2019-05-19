@@ -36,9 +36,15 @@
                         </a>
                     </li>
                     <li class="has-submenu">
-                        <a href="/admin/about">
+                        <a href="{{route('about.index')}}">
                             <i class="mdi mdi-view-dashboard"></i>
                             عن الجمعية
+                        </a>
+                    </li>
+                    <li class="has-submenu">
+                        <a href="{{route('directors.index')}}">
+                            <i class="mdi mdi-view-dashboard"></i>
+                            مجلس الادارة
                         </a>
                     </li>
                     <li class="has-submenu"><a href="#"><i class="mdi mdi-cube-outline"></i>Components</a>
