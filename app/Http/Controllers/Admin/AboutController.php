@@ -51,42 +51,41 @@ class AboutController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int $id
+     * @param about $about
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(About $about)
     {
-        $about = about::findOrFail($id);
         return view('admin.about.edit', compact('about'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param  int $id
+     * @param UpdateAboutRequest $request
+     * @param about $about
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(UpdateAboutRequest $request, $id)
+    public function update(UpdateAboutRequest $request, About $about)
     {
         $this->mergeRequestWithHeadMessage($request);
-        $status = about::where('id', $id)->update($request->except(['_token', '_method', 'head_name']));
+        $status = $about->update($request->except(['_token', '_method', 'head_name']));
         if ($status)
-            return $this->successResponse('admin/about','تم التعديل بنجاح');
+            return $this->successResponse('admin/about', 'تم التعديل بنجاح');
         return $this->failResponse();
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int $id
+     * @param about $about
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function destroy($id)
+    public function destroy(About $about)
     {
-        $status = about::findOrFail($id)->forceDelete();
+        $status = $about->forceDelete();
         if ($status)
-            return $this->successResponse('admin/about','تم الحذف بنجاح');
+            return $this->successResponse('admin/about', 'تم الحذف بنجاح');
         return $this->failResponse();
     }
 
