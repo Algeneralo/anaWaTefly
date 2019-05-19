@@ -40,9 +40,7 @@ class AboutController extends Controller
      */
     public function store(StoreAboutRequest $request)
     {
-        //replace the head message value to json to store the head name with the message
-        $request->merge(['head_message' => json_encode(['head_message' => $request->input('head_message'),
-            'head_name' => $request->input('head_name')])]);
+        $this->mergeRequestWithHeadMessage($request);
 
         $status = about::create($request->all());
         if ($status)
@@ -71,9 +69,7 @@ class AboutController extends Controller
      */
     public function update(UpdateAboutRequest $request, $id)
     {
-        //replace the head message value to json to store the head name with the message
-        $request->merge(['head_message' => json_encode(['head_message' => $request->input('head_message'),
-            'head_name' => $request->input('head_name')])]);
+        $this->mergeRequestWithHeadMessage($request);
         $status = about::where('id', $id)->update($request->except(['_token', '_method', 'head_name']));
         if ($status)
             return redirect('admin/about')->with('success', 'تم تحديث البيانات بنجاح');
@@ -92,5 +88,19 @@ class AboutController extends Controller
         if ($status)
             return redirect()->back()->with('success', 'تم الحذف بنجاح');
         return redirect()->back()->with('error', 'حدث خلل,يرجى المحاولة فيما بعد');
+    }
+
+    /**
+     * Replace the head message value with json data to store head name and message as json
+     *
+     * @param Request $request
+     */
+    private function mergeRequestWithHeadMessage(Request $request)
+    {
+        $request->merge([
+            'head_message' => json_encode(['head_message' => $request->input('head_message'),
+                'head_name' => $request->input('head_name')
+            ])
+        ]);
     }
 }
