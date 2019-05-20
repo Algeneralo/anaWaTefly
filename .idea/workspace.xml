@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="80ebd6bb-b938-45a5-b7fa-46c1cee47153" name="Default Changelist" comment="create post table controllers(programs and news)">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WebsiteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/WebsiteController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/articles/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/articles/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/website/articles/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/website/articles/footer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/website/articles/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/website/articles/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/website/details.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/website/details.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/website/partners.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/website/partners.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-    </list>
+    <list default="true" id="80ebd6bb-b938-45a5-b7fa-46c1cee47153" name="Default Changelist" comment="fix upload image name issues" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,11 +39,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/SliderController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-12">
-              <caret line="30" column="22" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
+            <state relative-caret-position="708">
+              <caret line="93" column="57" selection-start-line="93" selection-start-column="57" selection-end-line="93" selection-end-column="57" />
               <folding>
                 <element signature="e#46#82#0#PHP" expanded="true" />
               </folding>
@@ -61,20 +51,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Controller.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="31" selection-start-line="31" selection-end-line="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/DirectorController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="85" column="7" lean-forward="true" selection-start-line="85" selection-start-column="7" selection-end-line="88" selection-end-column="37" />
+            <state relative-caret-position="540">
+              <caret line="100" selection-start-line="100" selection-end-line="103" selection-end-column="37" />
               <folding>
                 <element signature="e#46#64#0#PHP" expanded="true" />
               </folding>
@@ -215,8 +196,8 @@
         <option value="$PROJECT_DIR$/app/Http/Requests/UpdateSliderRequest.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/slider/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/slider/edit.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/SliderController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Controller.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/SliderController.php" />
       </list>
     </option>
   </component>
@@ -506,14 +487,7 @@
       <workItem from="1558193082884" duration="22434000" />
       <workItem from="1558296370819" duration="14466000" />
       <workItem from="1558347631403" duration="25666000" />
-      <workItem from="1558381790802" duration="7041000" />
-    </task>
-    <task id="LOCAL-00025" summary="add about link to header">
-      <created>1558215352829</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1558215352829</updated>
+      <workItem from="1558381790802" duration="7177000" />
     </task>
     <task id="LOCAL-00026" summary="create about folder">
       <created>1558215387328</created>
@@ -851,11 +825,18 @@
       <option name="project" value="LOCAL" />
       <updated>1558389511757</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="fix upload image name issues">
+      <created>1558389544079</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1558389544079</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="215497000" />
+    <option name="totallyTimeSpent" value="215633000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
@@ -927,7 +908,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="edit merge request comment" />
     <MESSAGE value="add image default value" />
     <MESSAGE value="add check for file upload" />
     <MESSAGE value="add tr width" />
@@ -952,7 +932,8 @@
     <MESSAGE value="add caption ar and en column" />
     <MESSAGE value="add partners page variables to lang" />
     <MESSAGE value="fix upload image name issue" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix upload image name issue" />
+    <MESSAGE value="fix upload image name issues" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix upload image name issues" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/../../../../Obayda Alesawi/web/Admin Panels/Greeva/horizontal/rtl/ui-sweetalerts.html">
@@ -1300,10 +1281,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/DirectorController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="85" column="7" lean-forward="true" selection-start-line="85" selection-start-column="7" selection-end-line="88" selection-end-column="37" />
+        <state relative-caret-position="540">
+          <caret line="100" selection-start-line="100" selection-end-line="103" selection-end-column="37" />
           <folding>
             <element signature="e#46#64#0#PHP" expanded="true" />
           </folding>
@@ -1312,18 +1300,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/SliderController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-12">
-          <caret line="30" column="22" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
+        <state relative-caret-position="708">
+          <caret line="93" column="57" selection-start-line="93" selection-start-column="57" selection-end-line="93" selection-end-column="57" />
           <folding>
             <element signature="e#46#82#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Controller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
         </state>
       </provider>
     </entry>
