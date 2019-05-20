@@ -74,7 +74,7 @@ class DirectorController extends Controller
     {
         if ($request->hasFile('image_file')) {
             //use old image name to override it
-            $image = $this->uploadImage($request->file('image_file'), $director->name_en, [210, 210]);
+            $image = $this->uploadImage($request->file('image_file'), $director->image, [210, 210]);
             //replace image value with image name
             $request->merge(['image' => $image]);
         }
