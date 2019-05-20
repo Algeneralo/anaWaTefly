@@ -4,10 +4,10 @@
              style="background: url({{'/assets/img/volunteer-banner.png'}}) no-repeat scroll center center;">
         <div class="container">
             <div class="banner-content">
-                <h4 class="text-center">تطوع الان</h4>
+                <h4 class="text-center">@lang('general.home.volunteer')</h4>
                 <div class="banner-link">
-                    <a href="/">الرئيسية</a>
-                    <a class="active" href="/volunteer">تطوع الان</a>
+                    <a href="/">@lang('general.nav.contactUs')</a>
+                    <a class="active" href="/volunteer">@lang('general.home.volunteer')</a>
                 </div>
             </div>
         </div>
@@ -21,35 +21,35 @@
                         <div class="form-group">
                             <div class="md-form">
                                 <input type="text" class="form-control white-text">
-                                <label class="">الاسم</label>
+                                <label class="">@lang('general.name')</label>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="md-form">
                                 <input type="text" class="form-control white-text">
-                                <label class="">رقم الهاتف</label>
+                                <label class="">@lang('general.phone')</label>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="md-form">
                                 <input type="email" class="form-control white-text">
-                                <label class="">البريد الالكتروني</label>
+                                <label class="">@lang('general.email')</label>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="md-form">
                                 <input type="text" class="form-control white-text">
-                                <label class="">العنوان</label>
+                                <label class="">@lang('general.address')</label>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="md-form">
                                 <input type="text" class="form-control white-text">
-                                <label class="">المدة بالشهور</label>
+                                <label class="">@lang('general.duration')</label>
                             </div>
                         </div>
                         <div class="form-group float-right">
-                            <button class="btn" type="submit">تطوع</button>
+                            <button class="btn" type="submit">@lang('general.volunteer')</button>
                         </div>
                     </form>
 
@@ -57,7 +57,7 @@
             </div>
         </div>
         <div class="img">
-            <img src="{{asset('assets/img/volunteer-side-image.png')}}">
+            <img src="{{asset('assets/img/volunteer-side-image-'.App::getLocale().".png")}}">
         </div>
     </section>
 @endsection

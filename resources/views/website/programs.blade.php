@@ -4,10 +4,10 @@
              style="background: url({{'/assets/img/programs-banner.png'}}) no-repeat scroll center center;">
         <div class="container">
             <div class="banner-content">
-                <h4 class="text-center">البرامج</h4>
+                <h4 class="text-center">@lang('general.nav.programs')</h4>
                 <div class="banner-link">
-                    <a href="/">الرئيسية</a>
-                    <a class="active" href="/projects">البرامج</a>
+                    <a href="/">@lang('general.nav.home')</a>
+                    <a class="active" href="/projects">@lang('general.nav.programs')</a>
                 </div>
             </div>
         </div>
@@ -15,16 +15,19 @@
     <section class="programs">
         <div class="container">
             <div class="row">
-                <div class="programs-item col-12">
-                    <div class="programs-text float-left">
-                        <h3><span>برنامج</span> تمكين المرأة</h3>
-                        <p>
-                            asdddddddddddddddddddddSDadsa sadas ads asd asd
-                        </p>
-                        <a class="float-right" href="/details/programs/1">المزيد</a>
+                @foreach($programs as $program)
+                    <div class="programs-item col-12">
+                        <div class="programs-text float-left">
+                            <h3>{{$program->title}}</h3>
+                            <p>
+                                {{Str::limit(strip_tags($program->body),300)}}
+                            </p>
+                            <a class="float-right" href="/details/programs/{{$program->id}}">المزيد</a>
+                        </div>
+                        <img src="{{asset('assets/img/upload/'.$program->image)}}"
+                             class="float-right img-thumbnail w-50">
                     </div>
-                    <img src="{{asset('assets/img/test.jpg')}}" class="float-right img-thumbnail w-50">
-                </div>
+                @endforeach
             </div>
         </div>
     </section>

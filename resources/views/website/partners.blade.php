@@ -4,10 +4,10 @@
              style="background: url({{'/assets/img/partners-banner.jpg'}}) no-repeat scroll center center;">
         <div class="container">
             <div class="banner-content">
-                <h4 class="text-center">شركاؤنا</h4>
+                <h4 class="text-center">@lang('general.nav.partners')</h4>
                 <div class="banner-link">
-                    <a href="/">الرئيسية</a>
-                    <a class="active" href="/partners">شركاؤنا</a>
+                    <a href="/">@lang('general.nav.home')</a>
+                    <a class="active" href="/partners">@lang('general.nav.partners')</a>
                 </div>
             </div>
         </div>
@@ -16,12 +16,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 partners-text text-center">
-                    <h3>شركاؤنا</h3>
-                    <p class="w-50">لقد أصبح كل عملنا ممكنا من خلال التزام وتفاني شركائنا والداعمين القيمين.
-
-                        مؤسسة تشعر بالامتنان لشركائها ومؤيديها من مختلف المستويات التي لا نستطيع ذكرها جميعًا هنا.
-                        إنهم
-                        يستحقون ونحن نشارك معهم كل التقدير والتقدير الذي نحصل عليه من المجتمعات المحلية.</p>
+                    <h3>@lang('general.nav.partners')</h3>
+                    <p class="w-50">@lang('general.partners_message')</p>
                 </div>
             </div>
         </div>
@@ -47,28 +43,28 @@
         <div class="container">
             <div class="row">
                 <div class="message col-md-6 ">
-                    <h3>شاركنا</h3>
+                    <h3>@lang('general.home.joinUs')</h3>
                     <form action="">
                         <div class="form-group">
                             <div class="md-form">
                                 <input type="text" class="form-control white-text">
-                                <label class="">الاسم</label>
+                                <label class="">@lang('general.name')</label>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="md-form">
                                 <input type="text" class="form-control white-text">
-                                <label class="">رقم الهاتف</label>
+                                <label class="">@lang('general.phone')</label>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="md-form">
                                 <input type="email" class="form-control white-text">
-                                <label class="">البريد الالكتروني</label>
+                                <label class="">@lang('general.email')</label>
                             </div>
                         </div>
                         <div class="form-group float-right">
-                            <button class="btn" type="submit">شاركنا</button>
+                            <button class="btn" type="submit">@lang('general.home.joinUs')</button>
                         </div>
                     </form>
 

@@ -50,7 +50,7 @@
     <section class="participate">
         <div class="container">
             <div class="participate-title text-center">
-                <h2>شاركنا</h2>
+                <h2>@lang('general.home.joinUs')</h2>
                 <p>نص يوضع هنا بعرفش شو لزومه</p>
             </div>
             <div class="row justify-content-center m-0">
@@ -68,9 +68,9 @@
                                 </path>
                             </svg>
                         </div>
-                        <div class="box-title">تبرغ</div>
-                        <div class="box-text">lLorem ipsum is placeholder text commonly used in the graphic, print, and
-                            publishing industries for previewing layouts and visual mockups.
+                        <div class="box-title">@lang('general.home.donate')</div>
+                        <div class="box-text">
+                            @lang('general.home.donate_message')
                         </div>
                     </a>
                 </div>
@@ -88,8 +88,8 @@
                                 </path>
                             </svg>
                         </div>
-                        <div class="box-title">تطوع الان</div>
-                        <div class="box-text">ssssssssssssssssssssssss</div>
+                        <div class="box-title">@lang('general.home.volunteer')</div>
+                        <div class="box-text">@lang('general.home.volunteer_message')</div>
                     </a>
                 </div>
             </div>
@@ -99,14 +99,9 @@
         <div class="container" style="color: white">
             <div class="row">
                 <div class="col-md-8">
-                    <h4 class="my-sm-auto">مرحبا بك في مؤسستنا</h4>
-                    <p>It is a long established fact that a reader will be distracted by the readable content of a
-                        page when looking at its layout. The point of using Lorem Ipsum is that it has a
-                        more-or-less normal distribution of letters.It is a long established fact that a reader will be
-                        distracted by the readable content of a
-                        page when looking at its layout. The point of using Lorem Ipsum is that it has a
-                        more-or-less normal distribution of letters.</p>
-                    <a href="/about" class="btn float-left">المزيد</a>
+                    <h4 class="my-sm-auto">@lang('general.home.welcome')</h4>
+                    <p>{{$welcomeMessage}}</p>
+                    <a href="/about" class="btn float-left">@lang('general.more')</a>
                 </div>
                 <div class="col-md-4">
                     <img class="img-fluid" src="{{asset('assets/img/test.jpg')}}">
@@ -118,19 +113,21 @@
         <div class="container">
             <div class="row">
                 <div class="new-title text-center col-12">
-                    <h2>الاخبار</h2>
+                    <h2>@lang('general.home.news')</h2>
                 </div>
             </div>
             <div class="news-items owl-carousel">
-                <div class="news-item card">
-                    <img class="card-img-top" src="{{asset('assets/img/test.jpg')}}" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title hast</h5>
-                        <p class="card-text">{{Str::limit('Some quick example text to build on the card title and make up the bulk
-                            of the card',100)}}</p>
-                        <a href="/details/news/1" class="btn btn-primary">المزيد</a>
+                @foreach($news as $object)
+                    <div class="news-item card">
+                        <img class="card-img-top" src="{{asset('assets/img/upload/'.$object->image)}}"
+                             alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">{{$object->title}}</h5>
+                            <p class="card-text">{{Str::limit(strip_tags($object->body),100)}}</p>
+                            <a href="/details/news/{{$object->id}}" class="btn btn-primary">@lang('general.more')</a>
+                        </div>
                     </div>
-                </div>
+                @endforeach
 
             </div>
         </div>
