@@ -9,3 +9,7 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
+public/assets/img/upload/*
+
+# exception to the rule
+!public/assets/img/upload/staff.png
