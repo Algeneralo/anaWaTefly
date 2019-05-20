@@ -22,10 +22,12 @@ class WebsiteController extends Controller
      */
     public function index()
     {
+
         $news = News::all();
         $slider = Slider::all();
         //select the message for the current language
-        $welcomeMessage = config::select('welcome_message_' . \App::getLocale());
+        $welcomeAttr = "welcome_message_" . \App::getLocale();
+        $welcomeMessage = config::first()->$welcomeAttr;
         return view('website.home', compact('news', 'slider', 'welcomeMessage'));
     }
 
@@ -36,17 +38,19 @@ class WebsiteController extends Controller
      */
     public function about()
     {
+//        \App::setLocale("en");
         $about = about::first();
         $directors = Directors::all();
         return view('website.about', compact('about', 'directors'));
     }
 
     /**
-     * Projects page function with 2 types of project
+     * Projects page function with 2 types of posts
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function projects()
     {
+
         $doneProjects = DoneProjects::all();
         $financeProjects = FinanceProjects::all();
         return view('website.projects', compact('doneProjects', 'financeProjects'));
@@ -89,5 +93,20 @@ class WebsiteController extends Controller
         $table = "App\\" . ucfirst($table);
         $data = $table::findOrFail($id);
         return view('website.details', compact('data'));
+    }
+
+    /**
+     * function for changing language
+     *
+     * @param $locale
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function localization($locale)
+    {
+        \App::setLocale($locale);
+        //store the locale in session so that the middleware can register it
+        session()->put('locale', $locale);
+        return redirect()->back();
+
     }
 }
