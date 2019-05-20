@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Directors;
 use App\Http\Requests\StoreDirectorRequest;
 use App\Http\Requests\UpdateDirectorRequest;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -39,7 +40,9 @@ class DirectorController extends Controller
      */
     public function store(StoreDirectorRequest $request)
     {
-        $image = $this->uploadImage($request->file('image_file'), $request->input('name_en'), [210, 210]);
+        //name for image to save it
+        $imageName = Carbon::now()->timestamp . "-" . $request->input('name_en');
+        $image = $this->uploadImage($request->file('image_file'), $imageName, [210, 210]);
         //replace image value with image name
         $request->merge(['image' => $image]);
         $status = Directors::create($request->all());
@@ -70,6 +73,7 @@ class DirectorController extends Controller
     public function update(UpdateDirectorRequest $request, Directors $director)
     {
         if ($request->hasFile('image_file')) {
+            //use old image name to override it
             $image = $this->uploadImage($request->file('image_file'), $director->name_en, [210, 210]);
             //replace image value with image name
             $request->merge(['image' => $image]);
