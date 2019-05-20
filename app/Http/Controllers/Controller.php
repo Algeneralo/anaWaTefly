@@ -25,8 +25,7 @@ class Controller extends BaseController
     protected function uploadImage(UploadedFile $image, $name = null, $resize = [], $path = null)
     {
         //get the file desired name or set the original one with timestamp
-        $imageName = $name . "." . $image->getClientOriginalExtension()
-            ?? Carbon::now()->timestamp . "-" . $image->getClientOriginalName();
+        $imageName = $name . "." . $image->getClientOriginalExtension() ?? Carbon::now()->timestamp . "-" . $image->getClientOriginalName();
         //get file desired path or set it to public path
         $path = $path ?? public_path('assets/img/upload/');
         //if image need to resize
