@@ -11,6 +11,9 @@ use App\Http\Controllers\Controller;
 
 class DirectorController extends Controller
 {
+
+    private $redirect = 'admin/directors';
+
     /**
      * Display a listing of the resource.
      *
@@ -47,7 +50,7 @@ class DirectorController extends Controller
         $request->merge(['image' => $image]);
         $status = Directors::create($request->all());
         if ($status)
-            return $this->successResponse('admin/directors');
+            return $this->successResponse($this->redirect);
         return $this->failResponse();
     }
 
@@ -80,7 +83,7 @@ class DirectorController extends Controller
         }
         $status = $director->update($request->except(['_token', '_method', 'image_file']));
         if ($status)
-            return $this->successResponse('admin/directors', 'تم التعديل بنجاح');
+            return $this->successResponse($this->redirect, 'تم التعديل بنجاح');
         return $this->failResponse();
     }
 
@@ -95,7 +98,7 @@ class DirectorController extends Controller
     {
         $status = $director->delete();
         if ($status)
-            return $this->successResponse('admin/directors', 'تم الحذف بنجاح');
+            return $this->successResponse($this->redirect, 'تم الحذف بنجاح');
         return $this->failResponse();
     }
 
