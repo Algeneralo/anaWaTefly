@@ -40,6 +40,7 @@ return [
     "contact" => "Contact <span>US</span>",
     "contact_info" => "Contact <span>Info</span>",
     "more" => "more",
+    "otherPosts" => "Other topics",
     "lang" => "Language",
     "name" => "Name",
     "email" => "Email",
