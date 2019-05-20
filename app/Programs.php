@@ -13,7 +13,7 @@ class Programs extends Model
     protected $table = "posts";
     protected $fillable = ['title', 'body', 'image', 'lang'];
     protected $attributes = [
-        'type' => 3,
+        'type' => 2,
     ];
 
     /**
@@ -28,7 +28,7 @@ class Programs extends Model
 
         static::addGlobalScope(new LangScope());
         static::addGlobalScope('type', function (Builder $builder) {
-            $builder->where('type', 3);
+            $builder->where('type', 2);
         });
     }
 }

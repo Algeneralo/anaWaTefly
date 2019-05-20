@@ -13,7 +13,7 @@ class DoneProjects extends Model
     protected $table = "posts";
     protected $fillable = ['title', 'body', 'image', 'lang'];
     protected $attributes = [
-        'type' => 2,
+        'type' => 3,
     ];
 
     /**
@@ -28,7 +28,7 @@ class DoneProjects extends Model
 
         static::addGlobalScope(new LangScope());
         static::addGlobalScope('type', function (Builder $builder) {
-            $builder->where('type', 2);
+            $builder->where('type', 3);
         });
     }
 }
