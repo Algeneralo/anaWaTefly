@@ -16,6 +16,7 @@ Route::get('/about', 'WebsiteController@about');
 Route::get('/projects', 'WebsiteController@projects');
 Route::get('/programs', 'WebsiteController@programs');
 Route::get('/partners', 'WebsiteController@partners');
+Route::get('/lang/{locale}', 'WebsiteController@localization');
 Route::match(['get', 'post'], '/volunteer', 'WebsiteController@volunteer');
 Route::match(['get', 'post'], '/contact-us', 'WebsiteController@contactUs');
 
@@ -29,6 +30,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::resource('about', 'Admin\AboutController')->except(['show']);
     Route::resource('directors', 'Admin\DirectorController')->except(['show']);
     Route::resource('doneProjects', 'Admin\DoneProjectController')->except(['show']);
+    Route::resource('financeProjects', 'Admin\FinanceProjectController')->except(['show']);
+    Route::resource('programs', 'Admin\ProgramController')->except(['show']);
+    Route::resource('news', 'Admin\NewsController')->except(['show']);
+
     Route::post('/imgUpload', "AdminController@uploadCKEditorImage");
 });
 Auth::routes();

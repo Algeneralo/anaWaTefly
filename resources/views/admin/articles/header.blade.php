@@ -51,8 +51,20 @@
                     <li class="has-submenu"><a href="#"><i class="mdi mdi-cube-outline"></i>المشاريع</a>
                         <ul class="submenu">
                             <li><a href="{{route('doneProjects.index')}}">المشاريع المنجزة</a></li>
-                            <li><a href="calendar.html">مشاريع للتمويل</a></li>
+                            <li><a href="{{route('financeProjects.index')}}">مشاريع للتمويل</a></li>
                         </ul>
+                    </li>
+                    <li class="has-submenu">
+                        <a href="{{route('programs.index')}}">
+                            <i class="mdi mdi-view-dashboard"></i>
+                            البرامج
+                        </a>
+                    </li>
+                    <li class="has-submenu">
+                        <a href="{{route('news.index')}}">
+                            <i class="mdi mdi-view-dashboard"></i>
+                            الاخبار
+                        </a>
                     </li>
                 </ul><!-- End navigation menu -->
                 <div class="clearfix"></div>
