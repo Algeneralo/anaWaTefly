@@ -44,10 +44,12 @@ class DirectorController extends Controller
     public function store(StoreDirectorRequest $request)
     {
         //name for image to save it
-        $imageName = Carbon::now()->timestamp . "-" . $request->input('name_en');
-        $image = $this->uploadImage($request->file('image_file'), $imageName, [210, 210]);
-        //merge request with image variable to save it's name
-        $request->merge(['image' => $image]);
+        if ($request->hasFile('image_file')) {
+            $imageName = Carbon::now()->timestamp . "-" . $request->input('name_en');
+            $image = $this->uploadImage($request->file('image_file'), $imageName, [210, 210]);
+            //merge request with image variable to save it's name
+            $request->merge(['image' => $image]);
+        }
         $status = Directors::create($request->all());
         if ($status)
             return $this->successResponse($this->redirect);
