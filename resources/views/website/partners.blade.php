@@ -27,13 +27,16 @@
         <div class="container">
             <div class="row">
                 <div class="partners-list-items owl-carousel">
-                    <div class="partners-list-item">
-                        <img class="card-img-top" src="{{asset('assets/img/person.png')}}"
-                             alt="Card image cap">
-                        <div class="card-body text-center">
-                            <h4 class="card-title">يسرى العيسوي</h4>
+                    @foreach($partners as $partner)
+                        <div class="partners-list-item">
+                            <img class="card-img-top" src="{{asset('assets/img/upload/'.$partner->id)}}"
+                                 alt="Card image cap">
+                            <div class="card-body text-center">
+                                <h4 class="card-title">@if(App::getLocale()=="ar"){{$partner->name_ar}}
+                                    @else{{$partner->name_en}}@endif</h4>
+                            </div>
                         </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>

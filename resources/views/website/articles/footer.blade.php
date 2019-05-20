@@ -32,7 +32,7 @@
                         @if(App::getLocale()=="ar")
                             {{$config->location_ar}}
                         @else
-                            {{$config->location_ar}}
+                            {{$config->location_en}}
                         @endif
                     </div>
                 </div>

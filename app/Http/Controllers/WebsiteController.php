@@ -87,12 +87,22 @@ class WebsiteController extends Controller
         return view('website.contact-us');
     }
 
+    /**
+     * this function is using for all "more" buttons
+     *
+     * @param $table -model name
+     * @param $id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function details($table, $id)
     {
+        //store to send it to view for other posts
+        $tableName = $table;
         // Capitalized the string then get the Model from it
         $table = "App\\" . ucfirst($table);
-        $data = $table::findOrFail($id);
-        return view('website.details', compact('data'));
+        $post = $table::findOrFail($id);
+        $otherPosts = $table::where('id', '!=', $id)->take(5)->get();
+        return view('website.details', compact('post', 'otherPosts', 'tableName'));
     }
 
     /**
@@ -101,11 +111,14 @@ class WebsiteController extends Controller
      * @param $locale
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function localization($locale)
+    public function localization(Request $request, $locale)
     {
         \App::setLocale($locale);
         //store the locale in session so that the middleware can register it
         session()->put('locale', $locale);
+        //check if the previous url was from details page ,if not will redirect to back,otherwise it'll redirect to home page
+        if (strpos(url()->previous(), "details") != false)
+            return redirect('/');
         return redirect()->back();
 
     }

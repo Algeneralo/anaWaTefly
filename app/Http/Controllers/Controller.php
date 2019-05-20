@@ -29,7 +29,6 @@ class Controller extends BaseController
             $imageName = $name . "." . $image->getClientOriginalExtension();
         else
             $imageName = Carbon::now()->timestamp . "-" . $image->getClientOriginalName();
-        dd($imageName);
         //get file desired path or set it to public path
         $path = $path ?? public_path('assets/img/upload/');
         //if image need to resize

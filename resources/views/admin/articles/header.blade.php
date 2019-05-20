@@ -36,8 +36,14 @@
                         </a>
                     </li>
                     <li class="has-submenu">
-                        <a href="{{route('about.index')}}">
+                        <a href="{{route('sliders.index')}}">
                             <i class="mdi mdi-view-dashboard"></i>
+                            السلايدر
+                        </a>
+                    </li>
+                    <li class="has-submenu">
+                        <a href="{{route('about.index')}}">
+                            <i class="mdi mdi-account-multiple-plus"></i>
                             عن الجمعية
                         </a>
                     </li>

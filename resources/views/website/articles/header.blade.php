@@ -33,7 +33,7 @@
                 <li class="nav-item dropdown float-left mr-3"
                     dir=@if(App::getLocale()=="en"){{'rlt'}}@else{{'ltr'}}@endif>
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="text-transform: none;">
                         @if(App::getLocale()=="en")  اللغة@else Language @endif
                     </a>
                     <div dir="rtl" class="dropdown-menu" aria-labelledby="navbarDropdown">

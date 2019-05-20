@@ -33,6 +33,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::resource('financeProjects', 'Admin\FinanceProjectController')->except(['show']);
     Route::resource('programs', 'Admin\ProgramController')->except(['show']);
     Route::resource('news', 'Admin\NewsController')->except(['show']);
+    Route::resource('sliders', 'Admin\SliderController')->except(['show']);
 
     Route::post('/imgUpload', "AdminController@uploadCKEditorImage");
 });
