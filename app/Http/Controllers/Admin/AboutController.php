@@ -11,6 +11,9 @@ use App\Http\Controllers\Controller;
 
 class AboutController extends Controller
 {
+
+    private $redirect = 'admin/about';
+
     /**
      * Display a listing of the resource.
      *
@@ -44,7 +47,7 @@ class AboutController extends Controller
 
         $status = about::create($request->all());
         if ($status)
-            return $this->successResponse('admin/about');
+            return $this->successResponse($this->redirect);
         return $this->failResponse();
     }
 
@@ -71,7 +74,7 @@ class AboutController extends Controller
         $this->mergeRequestWithHeadMessage($request);
         $status = $about->update($request->except(['_token', '_method', 'head_name']));
         if ($status)
-            return $this->successResponse('admin/about', 'تم التعديل بنجاح');
+            return $this->successResponse($this->redirect, 'تم التعديل بنجاح');
         return $this->failResponse();
     }
 
@@ -85,7 +88,7 @@ class AboutController extends Controller
     {
         $status = $about->forceDelete();
         if ($status)
-            return $this->successResponse('admin/about', 'تم الحذف بنجاح');
+            return $this->successResponse($this->redirect, 'تم الحذف بنجاح');
         return $this->failResponse();
     }
 
