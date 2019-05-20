@@ -276,7 +276,7 @@ a:hover, a:focus {
     content: "";
     display: block;
     height: 0.5em;
-    width: 70px;
+    width: 210px;
     border-top: 2px solid orange;
     margin-right: auto;
     margin-left: auto;
@@ -545,8 +545,17 @@ footer a:hover {
     background-position: center;
     position: relative;
     overflow: hidden;
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
 }
-
+.head-message .container{
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
 .head-message .img {
     width: 50%;
     float: left;
@@ -554,12 +563,19 @@ footer a:hover {
     top: 0;
     left: 0;
     bottom: 0;
-
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
 }
 
 .head-message .img img {
     min-height: 100%;
     min-width: 100%;
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
 }
 
 .head-message .message {
