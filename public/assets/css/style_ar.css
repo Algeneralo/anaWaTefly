@@ -55,21 +55,85 @@
 .head-message .head-name {
     padding-right: 20px;
 }
+
 .head-message {
     -moz-transform: scaleX(1);
     -o-transform: scaleX(1);
     -webkit-transform: scaleX(1);
     transform: scaleX(1);
 }
-.head-message .container{
+
+.head-message .container {
     -moz-transform: scaleX(1);
     -o-transform: scaleX(1);
     -webkit-transform: scaleX(1);
     transform: scaleX(1);
 }
+
 .head-message .img {
     -moz-transform: scaleX(1);
     -o-transform: scaleX(1);
     -webkit-transform: scaleX(1);
     transform: scaleX(1);
+}
+
+.partners-join {
+    -moz-transform: scaleX(1);
+    -o-transform: scaleX(1);
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+}
+
+.partners-join .container {
+    -moz-transform: scaleX(1);
+    -o-transform: scaleX(1);
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+}
+
+.partners-join .img {
+    -moz-transform: scaleX(1);
+    -o-transform: scaleX(1);
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+}
+
+.partners-join .img img {
+    -moz-transform: scaleX(1);
+    -o-transform: scaleX(1);
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+}
+
+.partners p {
+    margin-left: unset;
+    margin-right: 25%;
+}
+
+.partners h3:after {
+    margin-right: 47.2%;
+    width: 54px;
+}
+
+.volunteer .img {
+    float: right;
+    right: 0;
+    left: unset;
+}
+
+@media (max-width: 991.98px) {
+    .partners p {
+        margin-right: unset;
+        margin-left: unset;
+    }
+
+    .partners h3:after {
+        margin-right: 44.7%;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .partners h3:after {
+        margin-right: 41.2%;
+    }
 }

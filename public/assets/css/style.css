@@ -184,9 +184,11 @@ a:hover, a:focus {
     border: 3px solid #ecf2f5;
     color: white;
 }
-.participate .box:hover a{
+
+.participate .box:hover a {
     color: white;
 }
+
 .participate a:hover {
     color: white;
 }
@@ -550,12 +552,14 @@ footer a:hover {
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
 }
-.head-message .container{
+
+.head-message .container {
     -moz-transform: scaleX(-1);
     -o-transform: scaleX(-1);
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
 }
+
 .head-message .img {
     width: 50%;
     float: left;
@@ -708,14 +712,14 @@ footer a:hover {
     content: ' ';
     display: block;
     border: 1.5px solid #ff7d01;
-    width: 54px;
-    margin-right: 47.2%;
+    width: 137px;
+    margin-left: 43.7%;
     margin-top: 5px;
 }
 
 .partners p {
     margin-top: 24px;
-    margin-right: 25%;
+    margin-left: 25%;
     font-family: Dubai-Regular;
 }
 
@@ -733,6 +737,17 @@ footer a:hover {
     padding: 80px 0;
     position: relative;
     overflow: hidden;
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+.partners-join .container {
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
 }
 
 .partners-join .img {
@@ -742,12 +757,19 @@ footer a:hover {
     top: -40px;
     left: 0;
     bottom: 0;
-
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
 }
 
 .partners-join .img img {
     min-height: 100%;
     min-width: 100%;
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
 }
 
 .partners-join h3 {
@@ -850,9 +872,9 @@ input[type=text]:focus:not([readonly]) ~ label, input[type=email]:focus:not([rea
 
 .volunteer .img {
     width: 50%;
-    float: right;
+    float: left;
     position: absolute;
-    right: 0;
+    left:  0;
     bottom: 0;
     overflow: hidden;
 }
@@ -999,13 +1021,16 @@ input[type=text]:focus:not([readonly]) ~ label, input[type=email]:focus:not([rea
     font-size: 16px;
     color: #3e90b0;
 }
-.sidebar li a{
+
+.sidebar li a {
     color: #60003F;
     font-family: Dubai-Medium;
 }
-.sidebar li a:hover{
+
+.sidebar li a:hover {
     color: #ff7d01;
 }
+
 /*-----------------------------------------------end details  style-----------------------------*/
 
 @media (min-width: 992px) {
@@ -1141,12 +1166,13 @@ input[type=text]:focus:not([readonly]) ~ label, input[type=email]:focus:not([rea
 
     .partners h3:after {
 
-        margin-right: 45.7%;
+        margin-left: 37.7%;
     }
 
     .partners p {
         width: 100% !important;
         margin-right: unset;
+        margin-left: unset;
     }
 
     .partners-join {
@@ -1186,7 +1212,7 @@ input[type=text]:focus:not([readonly]) ~ label, input[type=email]:focus:not([rea
     }
 
     .partners h3:after {
-        margin-right: 41.4%;
+        margin-left: 30.4%;
     }
 
     .partners-list-item {
