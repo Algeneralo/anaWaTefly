@@ -32,7 +32,7 @@
                     <td><img src="{{asset('assets/img/upload/'.$director->image??'staff.png')}}"
                              class="img-thumbnail w-25">
                     </td>
-                    <td>
+                    <td width="11%">
                         <a class="btn btn-warning" href="{{route('directors.edit',$director->id)}}">تعديل</a>
                         <form action="{{route('directors.destroy',$director->id)}}"
                               method="post">

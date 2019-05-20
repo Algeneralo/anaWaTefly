@@ -32,9 +32,9 @@
                     <td>{{$about->head_message}}</td>
                     <td>{{$about->head_name}}</td>
                     <td>@if($about->lang=="ar"){{'العربية'}}@else{{'الانجليزية'}}@endif</td>
-                    <td>
+                    <td width="11%">
                         <a class="btn btn-warning" href="{{route('about.edit',$about->id)}}">تعديل</a>
-                        <form class="form-inline" action="{{route('about.destroy',$about->id)}}"
+                        <form action="{{route('about.destroy',$about->id)}}"
                               method="post">
                             @csrf
                             @method('DELETE')
