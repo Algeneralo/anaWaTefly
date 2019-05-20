@@ -63,6 +63,7 @@
             <div class="row text-center">
                 <div class="col-12">
                     <button class="btn btn-success" type="submit">حفظ</button>
+                    <a href="{{route('about.index')}}" class="btn btn-danger" type="submit">الغاء</a>
                 </div>
             </div>
         </div>
