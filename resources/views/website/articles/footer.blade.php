@@ -7,9 +7,9 @@
                         <i class="fas fa-phone"></i>
                     </div>
                     <div class="col-10">
-                        <span dir="ltr">+972 599214056</span>
+                        <span dir="ltr">{{$config->phone}}</span>
                         <br>
-                        <span dir="ltr">+972 599214056</span>
+                        <span dir="ltr">{{$config->telephone}}</span>
                     </div>
                 </div>
             </div>
@@ -19,17 +19,21 @@
                         <i class="fas fa-envelope"></i>
                     </div>
                     <div class="col-10">
-                        anawatefly@gmail.com
+                        iandmychild1@hotmail.com
                     </div>
                 </div>
             </div>
-            <div class="footer-item col-md-3 text-center">
+            <div class="footer-item col-md-3 text-center ml-5">
                 <div class="row">
                     <div class="col-1 align-self-center">
                         <i class="fas fa-location-arrow"></i>
                     </div>
                     <div class="col-10">
-                        غزة-الشاطئ الشمالي بجوار مدرسة عدنان العلمي
+                        @if(App::getLocale()=="ar")
+                            {{$config->location_ar}}
+                        @else
+                            {{$config->location_ar}}
+                        @endif
                     </div>
                 </div>
             </div>

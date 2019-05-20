@@ -11,24 +11,45 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item @if(Request::path()=="/"){{'active'}} @endif">
-                    <a class="nav-link" href="/">الرئيسية <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/">@lang('general.nav.home') <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item @if(Request::path()=="about"){{'active'}} @endif">
-                    <a class="nav-link" href="/about">عن الجمعية </a>
+                    <a class="nav-link" href="/about">@lang('general.nav.about') </a>
                 </li>
                 <li class="nav-item @if(Request::path()=="projects"){{'active'}} @endif">
-                    <a class="nav-link" href="/projects">المشاريع</a>
+                    <a class="nav-link" href="/projects">@lang('general.nav.projects') </a>
                 </li>
                 <li class="nav-item @if(Request::path()=="programs"){{'active'}} @endif">
-                    <a class="nav-link" href="/programs">البرامج</a>
+                    <a class="nav-link" href="/programs">@lang('general.nav.programs') </a>
                 </li>
                 <li class="nav-item @if(Request::path()=="partners"){{'active'}} @endif">
-                    <a class="nav-link" href="/partners">شركاؤنا</a>
+                    <a class="nav-link" href="/partners">@lang('general.nav.partners') </a>
                 </li>
                 <li class="nav-item @if(Request::path()=="contact-us"){{'active'}} @endif">
-                    <a class="nav-link" href="/contact-us">تواصل معنا</a>
+                    <a class="nav-link" href="/contact-us">@lang('general.nav.contactUs')</a>
                 </li>
             </ul>
+            <ul class="navbar-nav float-right">
+                <li class="nav-item dropdown float-left mr-3"
+                    dir=@if(App::getLocale()=="en"){{'rlt'}}@else{{'ltr'}}@endif>
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        @if(App::getLocale()=="en")  اللغة@else Language @endif
+                    </a>
+                    <div dir="rtl" class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{url('/lang/en')}}">
+                            English
+                            <img style="width: 10%;" src="{{asset('assets/img/united-kingdom.png')}}">
+                        </a>
+                        <a class="dropdown-item" href="/lang/ar">
+                            العربية
+                            <img style="width: 10%;" src="{{asset('assets/img/Saudi-Arabia-Flag.png')}}">
+                        </a>
+                    </div>
+                </li>
+
+            </ul>
+
         </div>
     </nav>
 </header>
