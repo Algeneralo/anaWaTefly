@@ -47,9 +47,11 @@
                             مجلس الادارة
                         </a>
                     </li>
-                    <li class="has-submenu"><a href="#"><i class="mdi mdi-cube-outline"></i>Components</a>
+
+                    <li class="has-submenu"><a href="#"><i class="mdi mdi-cube-outline"></i>المشاريع</a>
                         <ul class="submenu">
-                            <li><a href="calendar.html">Calendar</a></li>
+                            <li><a href="{{route('doneProjects.index')}}">المشاريع المنجزة</a></li>
+                            <li><a href="calendar.html">مشاريع للتمويل</a></li>
                         </ul>
                     </li>
                 </ul><!-- End navigation menu -->

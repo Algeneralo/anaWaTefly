@@ -28,6 +28,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::post('/config/{id?}', "Admin\ConfigController@store");
     Route::resource('about', 'Admin\AboutController')->except(['show']);
     Route::resource('directors', 'Admin\DirectorController')->except(['show']);
+    Route::resource('doneProjects', 'Admin\DoneProjectController')->except(['show']);
+    Route::post('/imgUpload', "AdminController@uploadCKEditorImage");
 });
 Auth::routes();
 
