@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Admin;
 use App\DoneProjects;
 use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatePostRequest;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class DoneProjectController extends Controller
