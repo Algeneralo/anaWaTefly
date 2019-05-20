@@ -16,7 +16,8 @@ class CreateSliderTable extends Migration
         Schema::create('slider', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('image');
-            $table->string('caption');
+            $table->string('caption_ar');
+            $table->string('caption_en');
             $table->timestamps();
         });
     }
