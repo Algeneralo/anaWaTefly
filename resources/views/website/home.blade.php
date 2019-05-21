@@ -1,52 +1,42 @@
 @extends('website.layout')
 @section('body')
-    <div id="homeCarousel" class="carousel slide" data-ride="carousel">
+    <section class="carousel-section">
+        <div id="homeCarousel" class="carousel slide" data-ride="carousel">
 
-        <!-- carousel content -->
-        <div class="carousel-inner">
+            <!-- carousel content -->
+            <div class="carousel-inner">
 
-            <!-- first slide -->
-            <div class="carousel-item active">
-                <img class="d-block w-100 h-100" data-animation="animated fadeInUp"
-                     src="{{asset('assets/img//test.jpg')}}" alt="Third slide">
+                @foreach($sliders as $slider)
+                    <div class="carousel-item @if($loop->first) active @endif">
+                        <img class="d-block w-100" data-animation="animated fadeInUp"
+                             src="{{asset('assets/img/upload/'.$slider->image)}}" alt="Third slide">
 
-                <div class="carousel-caption d-md-block">
-                    <h3 data-animation="animated bounceInLeft">
-                        This is the caption for slide 1
-                    </h3>
-                    <h3 data-animation="animated bounceInRight">
-                        This is the caption for slide 1
-                    </h3>
-                </div>
+                        <div class="carousel-caption d-md-block">
+                            <h3 data-animation="animated bounceInLeft">
+                                @if(App::getLocale()=="ar")
+                                    {{$slider->caption_ar}}
+                                @else
+                                    {{$slider->caption_en}}
+                                @endif
+                            </h3>
+                        </div>
+                    </div>
+                @endforeach
             </div>
 
-            <div class="carousel-item">
-                <img class="d-block w-100 h-100" src="{{asset('assets/img//4.jpg')}}" alt="Third slide"
-                     data-animation="animated fadeInUp">
+            <!-- controls -->
+            <a class="carousel-control-prev" href="#homeCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#homeCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
 
-                <div class="carousel-caption d-md-block">
-                    <h3 data-animation="animated bounceInLeft">
-                        This is the caption for slide 1
-                    </h3>
-                    <h3 data-animation="animated bounceInRight">
-                        This is the caption for slide 1
-                    </h3>
-                    <button class="btn btn-primary btn-lg" data-animation="animated zoomInUp">Button</button>
-                </div>
-            </div>
         </div>
 
-        <!-- controls -->
-        <a class="carousel-control-prev" href="#homeCarousel" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#homeCarousel" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-
-    </div>
+    </section>
     <section class="participate">
         <div class="container">
             <div class="participate-title text-center">

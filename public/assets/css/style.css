@@ -113,6 +113,21 @@ a:hover, a:focus {
     animation-delay: .3s;
 }
 
+.carousel-caption {
+    width: 75%;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    background-color: #00000061;
+    padding: 25px 20px;
+}
+
+.carousel-caption h3 {
+    font-family: Dubai-Medium;
+    font-size: 1.35rem;
+}
+
+
 .carousel-caption h3:first-child {
     animation-delay: 1s;
 }
@@ -612,10 +627,6 @@ footer a:hover {
     height: 70px;
 }
 
-.head-message .head-name {
-    padding-left: 20px;
-}
-
 .head-message h4 {
     font-size: 16px;
     margin: 0;
@@ -874,7 +885,7 @@ input[type=text]:focus:not([readonly]) ~ label, input[type=email]:focus:not([rea
     width: 50%;
     float: left;
     position: absolute;
-    left:  0;
+    left: 0;
     bottom: 0;
     overflow: hidden;
 }
@@ -1060,8 +1071,48 @@ input[type=text]:focus:not([readonly]) ~ label, input[type=email]:focus:not([rea
         border-bottom: 1px solid #47596b;
     }
 
-    #homeCarousel .carousel-item {
-        height: 690px;
+    /*#homeCarousel .carousel-item {*/
+    /*height: 690px;*/
+    /*}*/
+    #homeCarousel {
+        width: 80%;
+        margin-right: auto;
+        margin-left: auto;
+        overflow: hidden;
+    }
+
+    .carousel-section {
+        padding: 80px 0 25px 0;
+        background: url(../img/white-background.jpg) no-repeat scroll center center;
+        position: relative;
+        background-size: cover;
+    }
+
+    .carousel-section:before {
+        content: "";
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        background: rgba(8, 15, 32, 0.9);
+        z-index: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    /*#homeCarousel, .carousel-control-prev, .carousel-control-next {*/
+    /*padding-top: 80px;*/
+    /*}*/
+    .carousel-inner {
+        /*border: 1.5px solid white;*/
+        border-radius: 27px;
+    }
+
+    .carousel-item, .carousel-inner {
+        height: 100%;
+    }
+
+    #homeCarousel {
+        height: 657px;
     }
 
 }
@@ -1227,6 +1278,10 @@ input[type=text]:focus:not([readonly]) ~ label, input[type=email]:focus:not([rea
 
     .owl-next {
         right: 34px;
+    }
+
+    .carousel-caption {
+        padding: 10px 8px;
     }
 }
 

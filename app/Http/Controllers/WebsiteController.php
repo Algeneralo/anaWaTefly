@@ -7,6 +7,7 @@ use App\config;
 use App\Directors;
 use App\DoneProjects;
 use App\FinanceProjects;
+use App\Mails;
 use App\News;
 use App\Partners;
 use App\Programs;
@@ -24,11 +25,11 @@ class WebsiteController extends Controller
     {
 
         $news = News::all();
-        $slider = Slider::all();
+        $sliders = Slider::all();
         //select the message for the current language
         $welcomeAttr = "welcome_message_" . \App::getLocale();
         $welcomeMessage = config::first()->$welcomeAttr;
-        return view('website.home', compact('news', 'slider', 'welcomeMessage'));
+        return view('website.home', compact('news', 'sliders', 'welcomeMessage'));
     }
 
     /**
@@ -82,8 +83,20 @@ class WebsiteController extends Controller
         return view('website.volunteer');
     }
 
-    public function contactUs()
+    public function contactUs(Request $request)
     {
+        if ($request->post()) {
+            $request->validate([
+                "name" => "required",
+                "email" => "required",
+                "phone" => "required",
+                "message" => "required",
+                "subject" => "required",
+            ]);
+            $status = Mails::create($request->all());
+            if ($status)
+                return redirect()->back()->with("success", trans('general.success_message'));
+        }
         return view('website.contact-us');
     }
 
