@@ -51,4 +51,5 @@ return [
     "volunteer" => "تطوع",
     "address" => "العنوان",
     "duration" => "المدة بالشهور",
+    "success_message"=>"تم ارسال الطلب بنجاح"
 ];

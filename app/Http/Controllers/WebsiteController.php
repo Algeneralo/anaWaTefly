@@ -9,6 +9,7 @@ use App\DoneProjects;
 use App\FinanceProjects;
 use App\Mails;
 use App\News;
+use App\PartnerRequest;
 use App\Partners;
 use App\Programs;
 use App\Slider;
@@ -70,10 +71,21 @@ class WebsiteController extends Controller
     /**
      * Partners page function,for showing the form and submitting it
      * when submit it will fire the if condition
+     * @param Request $request
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function partners()
+    public function partners(Request $request)
     {
+        if ($request->post()) {
+            $request->validate([
+                "name" => "required",
+                "email" => "required",
+                "phone" => "required",
+            ]);
+            $status = PartnerRequest::create($request->all());
+            if ($status)
+                return redirect()->back()->with("success", trans('general.success_message'));
+        }
         $partners = Partners::all();
         return view('website.partners', compact('partners'));
     }

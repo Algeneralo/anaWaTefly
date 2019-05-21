@@ -14,36 +14,53 @@
     </section>
     <section class="contact-us">
         <div class="container">
+            @if($errors->any())
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </div>
+            @endif
+            @if(session()->has('success'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{session('success')}}
+                </div>
+            @endif
             <div class="row">
                 <div class="col-md-8">
                     <h3>@lang('general.contact')</h3>
-                    <form action="">
+                    <form action="" method="post">
+                        @csrf
                         <div class="form-group form-inline">
                             <div class="md-form col-6" style="padding-left: unset;padding-right: unset">
-                                <input type="text" class="form-control white-text">
+                                <input name="name" type="text" class="form-control white-text" value="{{old('name')}}">
                                 <label class="">@lang('general.name')</label>
 
                             </div>
                             <div class="md-form col-6">
-                                <input type="text" class="form-control white-text">
+                                <input name="phone" type="text" class="form-control white-text"
+                                       value="{{old('phone')}}">
                                 <label class="">@lang('general.phone')</label>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="md-form">
-                                <input type="email" class="form-control white-text">
+                                <input name="email" type="email" class="form-control white-text"
+                                       value="{{old('email')}}">
                                 <label class="">@lang('general.email')</label>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="md-form">
-                                <input type="text" class="form-control white-text">
+                                <input name="subject" type="text" class="form-control white-text"
+                                       value="{{old('subject')}}">
                                 <label class="">@lang('general.subject')</label>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="md-form">
-                                <input type="text" class="form-control white-text">
+                                <input name="message" type="text" class="form-control white-text"
+                                       value="{{old('message')}}">
                                 <label class="">@lang('general.message')</label>
                             </div>
                         </div>

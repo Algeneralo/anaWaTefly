@@ -51,4 +51,5 @@ return [
     "volunteer" => "Volunteer",
     "address" => "Address",
     "duration" => "Duration in months",
+    "success_message"=>"Request sent successfully"
 ];
