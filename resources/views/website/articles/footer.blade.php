@@ -41,13 +41,13 @@
         <hr id="fade-line">
         <div class="row">
             <div class="col-12 text-center mt-3 mb-3">
-                <a href="#" target="_blank">
+                <a href="{{$config->facebook??"#"}}" target="_blank">
                     <i class="fab fa-facebook-square fa-2x mr-md-5 ml-2"></i>
                 </a>
-                <a href="#" target="_blank">
+                <a href="{{$config->twitter??"#"}}" target="_blank">
                     <i class="fab fa-twitter fa-2x mr-md-5 ml-md-5 ml-2"></i>
                 </a>
-                <a href="#" target="_blank">
+                <a href="{{$config->instagram??"#"}}" target="_blank">
                     <i class="fab fa-instagram fa-2x mr-md-5 ml-md-5 ml-2"></i>
                 </a>
             </div>

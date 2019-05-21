@@ -110,7 +110,6 @@
                     <h3>@lang('general.about.head_message_title')</h3>
                     <p>{{$about->head_message}}</p>
                     <div class="media align-items-center">
-                        <img class="rounded-circle" src="{{asset('assets/img/test.jpg')}}">
                         <div class="head-name">
                             <h4>{{$about->head_name}}</h4>
                             <p>@lang('general.about.directors_head')</p>
