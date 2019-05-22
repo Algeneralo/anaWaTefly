@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 
+use App\Mails;
+use App\PartnerRequests;
+use App\Volunteers;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -30,5 +33,13 @@ class AdminController extends Controller
             $message = 'No file uploaded.';
         }
         return '<script>window.parent.CKEDITOR.tools.callFunction(' . $funcNum . ', "' . $url . '", "' . $message . '")</script>';
+    }
+
+    public function emails()
+    {
+        $mails = Mails::all();
+        $partnersRequests = PartnerRequests::all();
+        $volunteersRequest = Volunteers::all();
+        return view("admin.emails", compact('mails', 'partnersRequests', 'volunteersRequest'));
     }
 }

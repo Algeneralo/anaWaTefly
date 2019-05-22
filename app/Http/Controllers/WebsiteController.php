@@ -9,7 +9,7 @@ use App\DoneProjects;
 use App\FinanceProjects;
 use App\Mails;
 use App\News;
-use App\PartnerRequest;
+use App\PartnerRequests;
 use App\Partners;
 use App\Programs;
 use App\Slider;
@@ -83,7 +83,7 @@ class WebsiteController extends Controller
                 "email" => "required",
                 "phone" => "required",
             ]);
-            $status = PartnerRequest::create($request->all());
+            $status = PartnerRequests::create($request->all());
             if ($status)
                 return redirect()->back()->with("success", trans('general.success_message'));
         }
