@@ -144,6 +144,9 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        "message" => "الرسالة",
+        "subject" => "الموضوع",
+    ],
 
 ];
