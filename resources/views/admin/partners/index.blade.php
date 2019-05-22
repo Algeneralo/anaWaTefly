@@ -29,8 +29,8 @@
                              class="img-thumbnail w-25">
                     </td>
                     <td width="11%">
-                        <a class="btn btn-warning" href="{{route('directors.edit',$partner->id)}}">تعديل</a>
-                        <form action="{{route('directors.destroy',$partner->id)}}"
+                        <a class="btn btn-warning" href="{{route('partners.edit',$partner->id)}}">تعديل</a>
+                        <form action="{{route('partners.destroy',$partner->id)}}"
                               method="post">
                             @csrf
                             @method('DELETE')
