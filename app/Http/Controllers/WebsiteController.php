@@ -13,6 +13,7 @@ use App\PartnerRequest;
 use App\Partners;
 use App\Programs;
 use App\Slider;
+use App\Volunteers;
 use Illuminate\Http\Request;
 
 class WebsiteController extends Controller
@@ -100,11 +101,13 @@ class WebsiteController extends Controller
     {
         if ($request->post()) {
             $request->validate([
-                "name" => "required",
+                "name" => "required|string",
                 "email" => "required",
                 "phone" => "required",
+                "address" => "required",
+                "duration" => "required",
             ]);
-            $status = PartnerRequest::create($request->all());
+            $status = Volunteers::create($request->all());
             if ($status)
                 return redirect()->back()->with("success", trans('general.success_message'));
         }

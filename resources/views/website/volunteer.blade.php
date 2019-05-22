@@ -20,31 +20,31 @@
                     <form action="">
                         <div class="form-group">
                             <div class="md-form">
-                                <input type="text" class="form-control white-text">
+                                <input name="name" required type="text" class="form-control white-text">
                                 <label class="">@lang('general.name')</label>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="md-form">
-                                <input type="text" class="form-control white-text">
+                                <input name="phone" required type="text" class="form-control white-text">
                                 <label class="">@lang('general.phone')</label>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="md-form">
-                                <input type="email" class="form-control white-text">
+                                <input name="email" required type="email" class="form-control white-text">
                                 <label class="">@lang('general.email')</label>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="md-form">
-                                <input type="text" class="form-control white-text">
+                                <input name="address" required type="text" class="form-control white-text">
                                 <label class="">@lang('general.address')</label>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="md-form">
-                                <input type="text" class="form-control white-text">
+                                <input name="duration" required type="text" class="form-control white-text">
                                 <label class="">@lang('general.duration')</label>
                             </div>
                         </div>
@@ -72,4 +72,16 @@
             }
         })
     </script>
+    @if(session()->has('success'))
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                swal({
+                    title: "{{session('success')}}",
+                    icon: "success",
+                    button: "@lang('general.ok')",
+                });
+            })
+        </script>
+    @endif
 @endsection
