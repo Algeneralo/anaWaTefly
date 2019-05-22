@@ -19,7 +19,7 @@ class CreateMailsTable extends Migration
             $table->string('phone');
             $table->string('email');
             $table->string('subject');
-            $table->string('message');
+            $table->longText('message');
             $table->timestamps();
             $table->softDeletes();
         });
