@@ -32,7 +32,7 @@
                     <li class="has-submenu">
                         <a href="/" target="_blank">
                             <i class="mdi mdi-web"></i>
-                           الموقع
+                            الموقع
                         </a>
                     </li>
                     <li class="has-submenu">
@@ -70,6 +70,12 @@
                             <li><a href="{{route('doneProjects.index')}}">المشاريع المنجزة</a></li>
                             <li><a href="{{route('financeProjects.index')}}">مشاريع للتمويل</a></li>
                         </ul>
+                    </li>
+                    <li class="has-submenu">
+                        <a href="/admin/emails">
+                            <i class="mdi mdi-email-outline"></i>
+                            الطلبات والايميلات
+                        </a>
                     </li>
                     <li class="has-submenu">
                         <a href="{{route('programs.index')}}">

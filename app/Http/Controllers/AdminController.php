@@ -35,11 +35,29 @@ class AdminController extends Controller
         return '<script>window.parent.CKEDITOR.tools.callFunction(' . $funcNum . ', "' . $url . '", "' . $message . '")</script>';
     }
 
+    /**
+     * function for reteive and show all request from users(contact,partner request,and volunteer request)
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function emails()
     {
         $mails = Mails::all();
         $partnersRequests = PartnerRequests::all();
-        $volunteersRequest = Volunteers::all();
-        return view("admin.emails", compact('mails', 'partnersRequests', 'volunteersRequest'));
+        $volunteersRequests = Volunteers::all();
+        return view("admin.emails", compact('mails', 'partnersRequests', 'volunteersRequests'));
+    }
+
+    public function destroy($table, $id)
+    {
+        // Capitalized the string then get the Model from it
+        $table = "App\\" . ucfirst($table);
+        try {
+            $status = $table::findOrFail($id)->delete();
+            if ($status)
+                return response()->json(["status" => 200]);
+        } catch (\Exception $exception) {
+            return response()->json(["status" => 500, "error" => $exception->getTraceAsString()]);
+        }
+        return response()->json(["status" => 404]);
     }
 }

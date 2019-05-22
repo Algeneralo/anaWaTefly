@@ -35,7 +35,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::resource('news', 'Admin\NewsController')->except(['show']);
     Route::resource('sliders', 'Admin\SliderController')->except(['show']);
     Route::resource('partners', 'Admin\PartnerController')->except(['show']);
-
+    Route::get('emails', 'AdminController@emails');
+    Route::delete('/delete/{table}/{id}', 'AdminController@destroy')
+        ->where(['table' => 'mails|partnerRequests|volunteers|news', 'id' => '[0-9]+']);
     Route::post('/imgUpload', "AdminController@uploadCKEditorImage");
 });
 Auth::routes();
