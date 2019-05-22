@@ -12,7 +12,7 @@ use App\Http\Controllers\Controller;
 class AboutController extends Controller
 {
 
-    private $redirect = 'admin/about';
+    private $redirect = '/admin/about';
 
     /**
      * Display a listing of the resource.

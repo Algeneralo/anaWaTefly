@@ -10,6 +10,8 @@ use Illuminate\Http\Request;
 
 class SliderController extends Controller
 {
+    private $redirect = "/admin/sliders";
+
     /**
      * Display a listing of the resource.
      *
@@ -44,7 +46,7 @@ class SliderController extends Controller
         $request->merge(['image' => $image]);
         $status = Slider::create($request->all());
         if ($status)
-            return $this->successResponse("/admin/sliders");
+            return $this->successResponse($this->redirect);
         return $this->failResponse();
     }
 
@@ -76,7 +78,7 @@ class SliderController extends Controller
         }
         $status = $slider->update($request->except(['_token', '_method', 'image_file']));
         if ($status)
-            return $this->successResponse("admin/sliders", 'تم التعديل بنجاح');
+            return $this->successResponse($this->redirect, 'تم التعديل بنجاح');
         return $this->failResponse();
     }
 
@@ -93,7 +95,7 @@ class SliderController extends Controller
             @unlink(public_path("assets/img/upload/" . $slider->image));
         $status = $slider->forceDelete();
         if ($status)
-            return $this->successResponse("/admin/sliders", 'تم الحذف بنجاح');
+            return $this->successResponse($this->redirect, 'تم الحذف بنجاح');
         return $this->failResponse();
     }
 }

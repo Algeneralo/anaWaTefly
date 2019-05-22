@@ -12,7 +12,7 @@ use App\Http\Controllers\Controller;
 class DirectorController extends Controller
 {
 
-    private $redirect = 'admin/directors';
+    private $redirect = '/admin/directors';
 
     /**
      * Display a listing of the resource.

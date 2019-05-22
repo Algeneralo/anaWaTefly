@@ -11,7 +11,7 @@ class DoneProjectController extends Controller
 {
     private $title = "المشاريع المنجزة";
     private $route = "doneProjects";
-    private $redirect = 'admin/doneProjects';
+    private $redirect = '/admin/doneProjects';
 
     /**
      * Display a listing of the resource.

@@ -11,7 +11,7 @@ class NewsController extends Controller
 {
     private $title = "الأخبار والمنشورات ";
     private $route = "news";
-    private $redirect = 'admin/news';
+    private $redirect = '/admin/news';
 
     /**
      * Display a listing of the resource.

@@ -9,7 +9,7 @@ use App\Http\Controllers\Controller;
 
 class PartnerController extends Controller
 {
-    private $redirect = "admin/partners";
+    private $redirect = "/admin/partners";
 
     /**
      * Display a listing of the resource.

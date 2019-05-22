@@ -11,7 +11,7 @@ class FinanceProjectController extends Controller
 {
     private $title = "مشاريع للتمويل ";
     private $route = "financeProjects";
-    private $redirect = 'admin/financeProjects';
+    private $redirect = '/admin/financeProjects';
 
     /**
      * Display a listing of the resource.

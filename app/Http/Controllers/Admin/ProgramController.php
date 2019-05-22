@@ -11,7 +11,7 @@ class ProgramController extends Controller
 {
     private $title = "البرامج";
     private $route = "programs";
-    private $redirect = 'admin/programs';
+    private $redirect = '/admin/programs';
 
     /**
      * Display a listing of the resource.
