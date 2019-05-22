@@ -178,6 +178,9 @@ a:hover, a:focus {
 
 .participate a {
     color: black;
+    display:inline-block;
+    width: 100%;
+    height: 110%;
 }
 
 .participate .box {

@@ -77,9 +77,9 @@
 
                                 </path>
                             </svg>
+                            <div class="box-title">@lang('general.home.volunteer')</div>
+                            <div class="box-text">@lang('general.home.volunteer_message')</div>
                         </div>
-                        <div class="box-title">@lang('general.home.volunteer')</div>
-                        <div class="box-text">@lang('general.home.volunteer_message')</div>
                     </a>
                 </div>
             </div>
