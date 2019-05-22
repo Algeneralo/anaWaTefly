@@ -18,7 +18,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-5">
-                    <img src="{{asset('assets/img/test.jpg')}}" class="img-fluid">
+                    <img src="{{asset('assets/img/info-image.jpg')}}" class="img-fluid">
                 </div>
                 <div class="col-md-6 align-self-center">
                     <p>
@@ -119,7 +119,7 @@
             </div>
         </div>
         <div class="img">
-            <img src="{{asset('assets/img/test.jpg')}}">
+            <img src="{{asset('assets/img/info-image.jpg')}}">
         </div>
     </section>
     <section class="meet-team">

@@ -30,6 +30,12 @@
             <div id="navigation"><!-- Navigation Menu-->
                 <ul class="navigation-menu">
                     <li class="has-submenu">
+                        <a href="/" target="_blank">
+                            <i class="mdi mdi-web"></i>
+                           الموقع
+                        </a>
+                    </li>
+                    <li class="has-submenu">
                         <a href="/admin">
                             <i class="mdi mdi-view-dashboard"></i>
                             الاعدادات العامة
@@ -37,23 +43,28 @@
                     </li>
                     <li class="has-submenu">
                         <a href="{{route('sliders.index')}}">
-                            <i class="mdi mdi-view-dashboard"></i>
+                            <i class="mdi mdi-folder-multiple-image"></i>
                             السلايدر
                         </a>
                     </li>
                     <li class="has-submenu">
                         <a href="{{route('about.index')}}">
-                            <i class="mdi mdi-account-multiple-plus"></i>
+                            <i class="mdi mdi-account-circle"></i>
                             عن الجمعية
                         </a>
                     </li>
                     <li class="has-submenu">
                         <a href="{{route('directors.index')}}">
-                            <i class="mdi mdi-view-dashboard"></i>
+                            <i class="mdi mdi-account-group"></i>
                             مجلس الادارة
                         </a>
                     </li>
-
+                    <li class="has-submenu">
+                        <a href="{{route('partners.index')}}">
+                            <i class="mdi mdi-account-group"></i>
+                            الشركاء
+                        </a>
+                    </li>
                     <li class="has-submenu"><a href="#"><i class="mdi mdi-cube-outline"></i>المشاريع</a>
                         <ul class="submenu">
                             <li><a href="{{route('doneProjects.index')}}">المشاريع المنجزة</a></li>

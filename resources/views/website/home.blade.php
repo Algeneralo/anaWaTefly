@@ -94,7 +94,7 @@
                     <a href="/about" class="btn float-left">@lang('general.more')</a>
                 </div>
                 <div class="col-md-4">
-                    <img class="img-fluid" src="{{asset('assets/img/test.jpg')}}">
+                    <img class="img-fluid" src="{{asset('assets/img/info-image.jpg')}}">
                 </div>
             </div>
         </div>
