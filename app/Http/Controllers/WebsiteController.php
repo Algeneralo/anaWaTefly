@@ -70,7 +70,7 @@ class WebsiteController extends Controller
 
     /**
      * Partners page function,for showing the form and submitting it
-     * when submit it will fire the if condition
+     * when submit, it will fire the if condition
      * @param Request $request
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
@@ -90,8 +90,24 @@ class WebsiteController extends Controller
         return view('website.partners', compact('partners'));
     }
 
-    public function volunteer()
+    /**
+     * volunteer page function,for showing the form and submitting it
+     * when submit, it will fire the if condition
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
+     */
+    public function volunteer(Request $request)
     {
+        if ($request->post()) {
+            $request->validate([
+                "name" => "required",
+                "email" => "required",
+                "phone" => "required",
+            ]);
+            $status = PartnerRequest::create($request->all());
+            if ($status)
+                return redirect()->back()->with("success", trans('general.success_message'));
+        }
         return view('website.volunteer');
     }
 

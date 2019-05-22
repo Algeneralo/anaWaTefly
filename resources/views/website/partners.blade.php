@@ -1,4 +1,8 @@
 @extends('website.layout')
+@section('style')
+    <link href="{{asset('assets/libs/sweetalert2/sweetalert2.min.css')}}" rel="stylesheet" type="text/css">
+
+@endsection
 @section('body')
     <section class="banner"
              style="background: url({{'/assets/img/partners-banner.jpg'}}) no-repeat scroll center center;">
@@ -47,22 +51,23 @@
             <div class="row">
                 <div class="message col-md-6 ">
                     <h3>@lang('general.home.joinUs')</h3>
-                    <form action="">
+                    <form action="" method="post">
+                        @csrf
                         <div class="form-group">
                             <div class="md-form">
-                                <input type="text" class="form-control white-text">
+                                <input required name="name" type="text" class="form-control white-text">
                                 <label class="">@lang('general.name')</label>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="md-form">
-                                <input type="text" class="form-control white-text">
+                                <input required name="phone" type="text" class="form-control white-text">
                                 <label class="">@lang('general.phone')</label>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="md-form">
-                                <input type="email" class="form-control white-text">
+                                <input required name="email" type="email" class="form-control white-text">
                                 <label class="">@lang('general.email')</label>
                             </div>
                         </div>
@@ -137,4 +142,17 @@
             }
         })
     </script>
+    {{--fire sweet aleret after sending message--}}
+    @if(session()->has('success'))
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                swal({
+                    title: "{{session('success')}}",
+                    icon: "success",
+                    button: "@lang('general.ok')",
+                });
+            })
+        </script>
+    @endif
 @endsection
