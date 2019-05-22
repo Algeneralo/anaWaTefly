@@ -94,7 +94,7 @@
                 responsiveClass: true,
                 autoplay: true,
                 autoplayTimeout: 4000,
-                loop: true,
+                loop: false,
                 responsive: {
                     // breakpoint from 0 up
                     0: {
