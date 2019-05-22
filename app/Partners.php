@@ -8,5 +8,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Partners extends Model
 {
     use SoftDeletes;
-    protected $fillable = ['name_ar', 'name_en', 'image', 'type'];
+    protected $fillable = ['name_ar', 'name_en', 'image'];
+    protected $attributes = [
+        "image" => "partner-image.png",
+    ];
 }

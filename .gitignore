@@ -13,3 +13,4 @@ public/assets/img/upload/*
 
 # exception to the rule
 !public/assets/img/upload/staff.png
+!public/assets/img/upload/partner-image.png

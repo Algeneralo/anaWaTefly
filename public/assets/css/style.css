@@ -998,6 +998,7 @@ input[type=text]:focus:not([readonly]) ~ label, input[type=email]:focus:not([rea
     height: 400px;
     position: relative;
     overflow: hidden;
+    border-radius: 10px 10px 0 0;
 }
 
 .details figure img {

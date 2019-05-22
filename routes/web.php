@@ -34,6 +34,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::resource('programs', 'Admin\ProgramController')->except(['show']);
     Route::resource('news', 'Admin\NewsController')->except(['show']);
     Route::resource('sliders', 'Admin\SliderController')->except(['show']);
+    Route::resource('partners', 'Admin\PartnerController')->except(['show']);
 
     Route::post('/imgUpload', "AdminController@uploadCKEditorImage");
 });

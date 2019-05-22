@@ -33,7 +33,7 @@
                 <div class="partners-list-items owl-carousel">
                     @foreach($partners as $partner)
                         <div class="partners-list-item">
-                            <img class="card-img-top" src="{{asset('assets/img/upload/'.$partner->id)}}"
+                            <img class="card-img-top" src="{{asset('assets/img/upload/'.$partner->image)}}"
                                  alt="Card image cap">
                             <div class="card-body text-center">
                                 <h4 class="card-title">@if(App::getLocale()=="ar"){{$partner->name_ar}}
