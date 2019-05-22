@@ -15,8 +15,8 @@ Route::get('/', 'WebsiteController@index');
 Route::get('/about', 'WebsiteController@about');
 Route::get('/projects', 'WebsiteController@projects');
 Route::get('/programs', 'WebsiteController@programs');
-Route::get('/partners', 'WebsiteController@partners');
 Route::get('/lang/{locale}', 'WebsiteController@localization');
+Route::match(['get', 'post'], '/partners', 'WebsiteController@partners');
 Route::match(['get', 'post'], '/volunteer', 'WebsiteController@volunteer');
 Route::match(['get', 'post'], '/contact-us', 'WebsiteController@contactUs');
 
