@@ -8,7 +8,7 @@
     </style>
 @endsection
 @section('body')
-    <form action="{{route('partners.update')}}" method="post" class="m-b-30" enctype="multipart/form-data">
+    <form action="{{route('partners.update',$partner->id)}}" method="post" class="m-b-30" enctype="multipart/form-data">
         @csrf
         @method("PUT")
         <div class="card-box"><h4 class="header-title m-t-0 mb-3">الشركاء</h4>
@@ -34,7 +34,7 @@
                     </div>
                     <div class="avatar-preview">
                         <div id="imagePreview"
-                             style="background-image: url('{{asset('assets/img/upload/').$partner->image}}');">
+                             style="background-image: url('{{asset('assets/img/upload/'.$partner->image)}}');">
                         </div>
                     </div>
                 </div>
