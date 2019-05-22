@@ -16,7 +16,8 @@ class Localization
      */
     public function handle($request, Closure $next)
     {
-        if (session()->has('locale')) {
+        //make localization for website only
+        if (session()->has('locale')&&!\Request::is('admin/*')) {
             App::setLocale(session()->get('locale'));
         }
         return $next($request);
