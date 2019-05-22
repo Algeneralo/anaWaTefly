@@ -12,6 +12,11 @@
         .tab-content {
             padding: unset;
         }
+
+        .nav-link.active .badge-primary {
+            background-color: white;
+            color: #188ae2;
+        }
     </style>
 @endsection
 @section('body')
@@ -20,15 +25,21 @@
             <ul class="nav nav-pills mb-3 mr-5" id="pills-tab" role="tablist">
                 <li class="nav-item">
                     <a class="nav-link active" id="pills-home-tab" data-toggle="pill"
-                       href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">الرسائل</a>
+                       href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">الرسائل
+                        <span class="badge badge-primary badge-pill">{{count($mails)}}</span>
+                    </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab"
-                       aria-controls="pills-profile" aria-selected="false">طلبات التطوع</a>
+                       aria-controls="pills-profile" aria-selected="false">طلبات التطوع
+                        <span class="badge badge-primary badge-pill">{{count($volunteersRequests)}}</span>
+                    </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab"
-                       aria-controls="pills-contact" aria-selected="false">طلبات الشركاء</a>
+                       aria-controls="pills-contact" aria-selected="false">طلبات الشركاء
+                        <span class="badge badge-primary badge-pill">{{count($partnersRequests)}}</span>
+                    </a>
                 </li>
             </ul>
         </div>
@@ -223,11 +234,12 @@
                     "_method": "DELETE",
                     "_token": "{{csrf_token()}}"
                 }, success: function (data) {
-                    console.log(data['error']);
+
                     if (data['status'] == 200) {
                         hideCard(button);
                         Swal.fire("تم حذف البيانات بنجاح", ' ', 'success')
                     } else {
+                        // console.log(data['error']);
                         Swal.fire("حدث خلل, الرجاء المحاولة لاحقا!", ' ', 'error')
                     }
 
@@ -242,18 +254,36 @@
         //remove the card and active the next one
         function hideCard(button) {
             let card = button.parent().parent().parent();
+            let cardParent = card.parent();
             let cardID = "#" + card.attr('id');
             card.next().addClass("active show");
+            let parentId = cardParent.parent().parent().parent().attr('id');
             card.fadeOut("slow", function () {
                 // After animation completed:
                 card.remove();
             });
+            //put empty content if there's no taps
+            if (cardParent.children().length == 1) {
+                cardParent.parent().parent().append(
+                    '<div class="col-12">' +
+                    '   <div class="card">' +
+                    '        <div class="card-body">' +
+                    '           <h5 class="card-title text-center">لا يوجد بيانات لعرضها</h5>' +
+                    '        </div>' +
+                    '    </div>' +
+                    '</div>');
+            }
+            //activate next pil
             let navPil = $('a[href="' + cardID + '"]');
             navPil.next().addClass("active");
             navPil.fadeOut("slow", function () {
                 // After animation completed:
                 navPil.remove();
             });
+            //decrease tap count with 1
+            let span = $("a[href='#" + parentId + "'] span");
+            span.text(parseInt(span.text()) - 1);
+
         }
     </script>
 @endsection
