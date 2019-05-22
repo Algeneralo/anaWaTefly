@@ -37,7 +37,7 @@ return [
         "doneProjects" => "Completed Projects",
         "financeProjects" => "Projects for Finance",
     ],
-    "partners_message" => "All our work has become possible through the commitment and dedication of our valued partners and supporters. An organization that is grateful to its partners and supporters from various levels that we can not all mention here. They deserve, and we share with them all the appreciation and appreciation we get from communities.",
+    "partners_message" => "Our work is made possible by the commitment and dedication of our valued partners and supporters. The Assembly is grateful to its partners and supporters at various levels that we can not all mention here. They deserve, and we share with them all the appreciation and appreciation we get from communities.",
     "contact" => "Contact <span>US</span>",
     "contact_info" => "Contact <span>Info</span>",
     "more" => "more",

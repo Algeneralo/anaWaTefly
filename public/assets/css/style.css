@@ -740,8 +740,10 @@ footer a:hover {
 
 .partners p {
     margin-top: 24px;
-    margin-left: 25%;
     font-family: Dubai-Regular;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: justify;
 }
 
 .partners-list {
