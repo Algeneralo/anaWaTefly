@@ -34,7 +34,7 @@
                               method="post">
                             @csrf
                             @method('DELETE')
-                            <button id="delete_button" class="btn btn-danger" type="submit">حذف</button>
+                            <button class="btn btn-danger delete_button" type="submit">حذف</button>
                         </form>
                     </td>
                 </tr>
@@ -50,7 +50,7 @@
 @endsection
 @section('script')
     <script>
-        $('#delete_button').on('click', function (e) {
+        $('.delete_button').on('click', function (e) {
             e.preventDefault();
             Swal.fire({
                 title: 'هل انت متأكد من الحذف؟',
