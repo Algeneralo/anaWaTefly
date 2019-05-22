@@ -41,7 +41,7 @@
         <div class="container">
             <div class="participate-title text-center">
                 <h2>@lang('general.home.joinUs')</h2>
-                <p>نص يوضع هنا بعرفش شو لزومه</p>
+                <p>@lang('general.home.join_message')</p>
             </div>
             <div class="row justify-content-center m-0">
                 <div class="col-md-3 col-sm-7 col-10 box text-center">

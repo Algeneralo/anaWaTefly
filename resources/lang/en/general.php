@@ -17,10 +17,11 @@ return [
     ],
     "home" => [
         "joinUs" => "Join Us",
+        "join_message" => "We are happy to contribute with us in drawing the smile on the faces of those who need it",
         "donate" => "Donate",
-        "donate_message" => "تبرع gggg",
+        "donate_message" => "Your contribution with us means continuing bidding",
         "volunteer" => "Volunteer now",
-        "volunteer_message" => " رسالتطوع الان",
+        "volunteer_message" => "Join us with your thoughts and cooperation in implementing our projects",
         "welcome" => "Welcome to our organization",
         "news" => "News and Publications",
     ],
